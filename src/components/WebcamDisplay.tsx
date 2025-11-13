@@ -1312,7 +1312,7 @@ const VideoChatContent: React.FC<{
   const language = webcamConfig.getLanguage?.() || 'en';
 
   // Game-specific features (optional)
-  const showLives = webcamConfig.showLives ?? false;
+  // const showLives = webcamConfig.showLives ?? false; // Not used in ThinkAlike (no lives system)
   const showTurnIndicators = webcamConfig.showTurnIndicators ?? false;
   const isVotingPhase = webcamConfig.isVotingPhase?.() || false;
   const answeringPlayerId = showTurnIndicators ? (webcamConfig.getCurrentTurnPlayer?.() || null) : null;
@@ -1348,7 +1348,7 @@ const VideoChatContent: React.FC<{
       id: 'self',
       stream: localStream,
       playerName: '👑 ' + gamemaster.name,
-      lives: 3, // GM doesn't have lives but show full hearts
+      lives: 0, // ThinkAlike doesn't display lives
       isSelf: true,
       isActive: true,
       isAnswering: false,
@@ -1369,7 +1369,7 @@ const VideoChatContent: React.FC<{
         id: 'self',
         stream: localStream,
         playerName: webcamConfig.formatPlayerName?.(selfPlayer) || selfPlayer.name,
-        lives: showLives ? (webcamConfig.getLivesForPlayer?.(selfPlayer.id) || 3) : 3,
+        lives: 0, // ThinkAlike doesn't display lives
         isSelf: true,
         isActive: !selfPlayer.isEliminated,
         isAnswering: answeringPlayerId === selfPlayer.id,
@@ -1399,7 +1399,7 @@ const VideoChatContent: React.FC<{
         id: player.id,
         stream: remoteStream || null,
         playerName: webcamConfig.formatPlayerName?.(player) || player.name,
-        lives: showLives ? (webcamConfig.getLivesForPlayer?.(player.id) || 3) : 3,
+        lives: 0,
         isSelf: false,
         isActive: !player.isEliminated,
         isAnswering: answeringPlayerId === player.id,
@@ -1421,7 +1421,7 @@ const VideoChatContent: React.FC<{
         id: gamemaster.id,
         stream: gmStream || null,
         playerName: '👑 ' + gamemaster.name,
-        lives: 3,
+        lives: 0,
         isSelf: false,
         isActive: true,
         isAnswering: false,
@@ -1434,7 +1434,7 @@ const VideoChatContent: React.FC<{
     }
 
     players.forEach(player => {
-      if (player.id !== userId) {
+      if (player.id !== userId && player.id !== gamemaster?.id) {
         const remoteStream = remoteStreams.get(player.id);
         const playerConnectionType = peerConnectionTypes.get(player.id);
         console.log(`[VideoChatContent] Player checking other player ${player.name} (${player.id}): stream ${remoteStream ? 'found' : 'not found'}, connectionType: ${playerConnectionType}`);
@@ -1443,7 +1443,7 @@ const VideoChatContent: React.FC<{
           id: player.id,
           stream: remoteStream || null,
           playerName: webcamConfig.formatPlayerName?.(player) || player.name,
-          lives: showLives ? (webcamConfig.getLivesForPlayer?.(player.id) || 3) : 3,
+          lives: 0,
           isSelf: false,
           isActive: !player.isEliminated,
           isAnswering: answeringPlayerId === player.id,
