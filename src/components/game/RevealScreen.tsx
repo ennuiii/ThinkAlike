@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { Lobby } from '../../types';
 import { Confetti } from '../animations/Confetti';
 import { HeartBreak } from '../animations/HeartBreak';
+import { playLoseLifeSound } from '../../utils/soundEffects';
 
 interface RevealScreenProps {
   lobby: Lobby;
@@ -23,6 +24,13 @@ export const RevealScreen: React.FC<RevealScreenProps> = ({ lobby, onNextRound }
     const timer = setTimeout(() => setShowAnimation(true), 100);
     return () => clearTimeout(timer);
   }, []);
+
+  // Play lose sound when no match
+  useEffect(() => {
+    if (!isMatch) {
+      playLoseLifeSound();
+    }
+  }, [isMatch]);
 
   const word1 = lastRound?.player1Word || '';
   const word2 = lastRound?.player2Word || '';
