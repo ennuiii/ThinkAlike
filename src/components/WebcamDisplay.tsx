@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Camera, CameraOff, Video, VideoOff, Heart, ExternalLink, Volume2, VolumeX, Eye, EyeOff, Mic, MicOff, Settings, Sparkles } from 'lucide-react';
+import { Camera, CameraOff, Video, VideoOff, ExternalLink, Volume2, VolumeX, Eye, EyeOff, Mic, MicOff, Settings, Sparkles } from 'lucide-react';
 import { useWebRTC } from '../contexts/WebRTCContext';
 import { useWebcamConfig } from '../config/WebcamConfig';
 import ReactDOM from 'react-dom';
@@ -34,7 +34,7 @@ interface VideoFeedProps {
 const VideoFeed: React.FC<VideoFeedProps> = ({
   stream,
   playerName,
-  lives,
+  lives: _lives, // Not used in ThinkAlike (no heart display)
   isSelf = false,
   isActive = true,
   isAnswering = false,
@@ -158,15 +158,6 @@ const VideoFeed: React.FC<VideoFeedProps> = ({
     }
   }, [isLocallyMuted]);
 
-  // Generate heart indicators based on lives - only show for non-gamemaster and when lives > 0
-  const heartIndicators = !isGamemaster && lives > 0 ? Array.from({ length: 3 }, (_, i) => (
-    <Heart
-      key={i}
-      size={isCompact ? 14 : 18}
-      className={`${i < lives ? 'fill-red-500 text-red-500 drop-shadow-md' : 'text-gray-600'} transition-all duration-300`}
-    />
-  )) : null;
-
   // Determine border styling based on state
   let borderClass = 'border-2 border-gray-700 shadow-lg';
   let borderStyle: React.CSSProperties = {};
@@ -285,11 +276,6 @@ const VideoFeed: React.FC<VideoFeedProps> = ({
       <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
         <div className="flex items-center justify-between">
           <span className={`text-white font-semibold ${isCompact ? 'text-sm' : 'text-base'} drop-shadow-lg`}>{playerName}</span>
-          {heartIndicators && (
-            <div className="flex gap-1.5">
-              {heartIndicators}
-            </div>
-          )}
         </div>
       </div>
       
