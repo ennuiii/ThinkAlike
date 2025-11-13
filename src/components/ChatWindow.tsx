@@ -5,20 +5,24 @@ import type { ChatMessage } from '../types';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface ChatWindowProps {
-  roomCode: string;
   socket: Socket;
-  messages: ChatMessage[];
+  messages?: ChatMessage[];
+  roomCode?: string;
+  lobby?: any;
+  isOpen?: boolean;
+  onClose?: () => void;
+  mode?: string;
 }
 
-const ChatWindow: React.FC<ChatWindowProps> = ({ roomCode, socket, messages }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const ChatWindow: React.FC<ChatWindowProps> = ({ socket, messages = [], roomCode: _roomCode, lobby: _lobby, isOpen: externalIsOpen, onClose: _onClose, mode: _mode }) => {
+  const [isOpen, _setIsOpen] = useState(externalIsOpen || false);
   const [message, setMessage] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const [unreadCount, setUnreadCount] = useState(0);
+  const [_unreadCount, setUnreadCount] = useState(0);
   const { theme } = useTheme();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const messageRadius = theme === 'thought-bubble' ? '4% 6% 5% 4% / 1% 1% 2% 4%' : '8px';
+  const messageRadius = theme === 'neural-sync' ? '8px' : '4% 6% 5% 4% / 1% 1% 2% 4%';
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {

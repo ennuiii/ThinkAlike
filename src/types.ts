@@ -19,6 +19,7 @@ export interface Player {
   isReady: boolean;
   currentWord: string | null;  // Hidden from opponent until both submit
   hasSubmitted: boolean;
+  score?: number;  // Player score
 }
 
 export interface Settings {

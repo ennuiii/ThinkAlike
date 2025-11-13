@@ -43,7 +43,7 @@ export function UnifiedServerApp() {
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string>('');
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [sessionToken, setSessionToken] = useState<string | null>(null);
+  const [_sessionToken, setSessionToken] = useState<string | null>(null);
 
   // Refs for cleanup
   const socketRef = useRef<Socket | null>(null);
@@ -375,7 +375,9 @@ export function UnifiedServerApp() {
         />
       );
 
-    case 'PLAYING':
+    case 'WORD_INPUT':
+    case 'REVEAL':
+    case 'VICTORY':
       return (
         <GameScreen
           lobby={lobby}
@@ -386,7 +388,7 @@ export function UnifiedServerApp() {
         />
       );
 
-    case 'GAME_ENDED':
+    case 'GAME_OVER':
       return (
         <GameOverScreen
           lobby={lobby}

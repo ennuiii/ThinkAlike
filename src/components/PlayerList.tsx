@@ -24,7 +24,7 @@ const PlayerList: React.FC<PlayerListProps> = ({
 }) => {
   const { theme } = useTheme();
   const isHost = hostId === mySocketId;
-  const playerRadius = theme === 'thought-bubble' ? '4% 6% 5% 4% / 1% 1% 2% 4%' : '8px';
+  const playerRadius = theme === 'neural-sync' ? '8px' : '4% 6% 5% 4% / 1% 1% 2% 4%';
 
   const handleKickPlayer = (playerId: string) => {
     if (!isHost) return;

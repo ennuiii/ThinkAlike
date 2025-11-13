@@ -15,7 +15,6 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
 
   // Calculate stats
   const totalAttempts = lobby.gameData?.rounds.length || 0;
-  const matchRate = totalAttempts > 0 ? (1 / totalAttempts * 100).toFixed(0) : 0;
 
   return (
     <div className="victory-container">

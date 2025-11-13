@@ -22,8 +22,8 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
   const isReady = myPlayer?.isReady || false;
   const hideRoomCode = gameBuddiesSession?.hideRoomCode || false;
 
-  // Theme-specific border radius for Thought Bubble theme
-  const cardRadius = theme === 'thought-bubble' ? '4% 6% 5% 4% / 1% 1% 2% 4%' : '12px';
+  // Theme-specific border radius for neural-sync theme
+  const cardRadius = theme === 'neural-sync' ? '12px' : '4% 6% 5% 4% / 1% 1% 2% 4%';
 
   // Check if exactly 2 players and both are ready
   const hasExactlyTwoPlayers = lobby.players.length === 2;

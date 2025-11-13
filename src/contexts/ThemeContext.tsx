@@ -19,7 +19,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.documentElement.setAttribute('data-theme', theme);
   }, []);
 
-  const setTheme = (newTheme: Theme) => {
+  const setTheme = (_newTheme: Theme) => {
     // No-op: only one theme available
   };
 

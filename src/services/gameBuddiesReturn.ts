@@ -1,4 +1,3 @@
-import type { GameBuddiesSession } from './gameBuddiesSession';
 import { getCurrentSession } from './gameBuddiesSession';
 
 export type ReturnMode = 'individual' | 'group';

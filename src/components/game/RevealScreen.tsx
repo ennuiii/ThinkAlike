@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import type { Lobby, Round } from '../../types';
+import type { Lobby } from '../../types';
 import { Confetti } from '../animations/Confetti';
 import { HeartBreak } from '../animations/HeartBreak';
 

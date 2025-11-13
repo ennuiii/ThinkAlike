@@ -9,12 +9,6 @@ interface VoiceModeInputProps {
 
 type VoteState = 'match' | 'no-match' | null;
 
-interface OpponentVote {
-  playerId: string;
-  playerName: string;
-  vote: VoteState;
-}
-
 const VoiceModeInput: React.FC<VoiceModeInputProps> = ({ lobby, socket }) => {
   const [phase, setPhase] = useState<'voting' | 'submitted' | 'dispute'>('voting');
   const [myVote, setMyVote] = useState<VoteState>(null);

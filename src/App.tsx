@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import socketService from './services/socketService';
-import { getCurrentSession, resolvePendingSession, storeSession } from './services/gameBuddiesSession';
+import { getCurrentSession, resolvePendingSession } from './services/gameBuddiesSession';
 import type { GameBuddiesSession } from './services/gameBuddiesSession';
 import type { Lobby, ChatMessage } from './types';
 import Home from './components/Home';
@@ -28,8 +28,8 @@ function AppContent() {
   const [isConnected, setIsConnected] = useState(false);
   const [gameBuddiesSession, setGameBuddiesSession] = useState<GameBuddiesSession | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [isWebcamHidden, setIsWebcamHidden] = useState(false);
-  const [sessionToken, setSessionToken] = useState<string | null>(null);
+  const [_isWebcamHidden, _setIsWebcamHidden] = useState(false);
+  const [_sessionToken, setSessionToken] = useState<string | null>(null);
   const isReconnecting = useRef(false);
 
   const handleCreateRoom = useCallback((playerName: string, session: GameBuddiesSession | null) => {

@@ -14,7 +14,7 @@ const Home: React.FC<HomeProps> = ({ onCreateRoom, onJoinRoom, gameBuddiesSessio
   const [roomCode, setRoomCode] = useState('');
   const [mode, setMode] = useState<'create' | 'join'>('create');
   const { theme } = useTheme();
-  const inputRadius = theme === 'thought-bubble' ? '4% 6% 5% 4% / 1% 1% 2% 4%' : '12px';
+  const inputRadius = theme === 'neural-sync' ? '12px' : '4% 6% 5% 4% / 1% 1% 2% 4%';
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);

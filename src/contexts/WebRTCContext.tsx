@@ -294,6 +294,24 @@ function webrtcReducer(state: WebRTCState, action: WebRTCAction): WebRTCState {
   }
 }
 
+// Helper function to get high-quality audio constraints
+const getHighQualityAudioConstraints = (deviceId?: string): MediaTrackConstraints => {
+  const baseConstraints: MediaTrackConstraints = {
+    echoCancellation: true,
+    noiseSuppression: true,
+    autoGainControl: false,  // Disable to maintain natural voice levels
+  };
+
+  if (deviceId) {
+    return {
+      ...baseConstraints,
+      deviceId: { exact: deviceId }
+    };
+  }
+
+  return baseConstraints;
+};
+
 interface WebRTCContextState extends WebRTCState {
   enableVideoChat: () => Promise<void>;
   prepareVideoChat: () => Promise<void>;
