@@ -106,6 +106,17 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
           <div className="round-indicator text-sm sm:text-base">
             Round {lobby.gameData.currentRound || 0}
           </div>
+
+          {/* GameBuddies Return Button (Compact icon variant) */}
+          {lobby.isGameBuddiesRoom && (
+            <GameBuddiesReturnButton
+              roomCode={lobby.code}
+              socket={socket}
+              isHost={isHost}
+              players={lobby.players}
+              variant="icon"
+            />
+          )}
         </div>
       )}
 
@@ -123,13 +134,6 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
 
         {renderGamePhase()}
       </div>
-
-      {/* GameBuddies Return Button */}
-      {lobby.isGameBuddiesRoom && (
-        <div style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 100 }}>
-          <GameBuddiesReturnButton roomCode={lobby.code} socket={socket} />
-        </div>
-      )}
     </div>
   );
 };

@@ -8,13 +8,15 @@ interface GameBuddiesReturnButtonProps {
   socket: Socket;
   isHost?: boolean;
   players?: Array<{ id?: string; name?: string }>;
+  variant?: 'button' | 'icon'; // 'button' for lobby, 'icon' for compact gameplay display
 }
 
 const GameBuddiesReturnButton: React.FC<GameBuddiesReturnButtonProps> = ({
   roomCode,
   socket,
   isHost = false,
-  players = []
+  players = [],
+  variant = 'button'
 }) => {
   const [isReturning, setIsReturning] = useState(false);
   const [countdown, setCountdown] = useState(3);
@@ -186,23 +188,67 @@ const GameBuddiesReturnButton: React.FC<GameBuddiesReturnButtonProps> = ({
     );
   }
 
+  // Icon variant for compact gameplay display (beside lives)
+  if (variant === 'icon') {
+    return (
+      <button
+        onClick={() => isHost ? setShowOptions(true) : handleReturn('individual')}
+        title="Return to GameBuddies"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300"
+        style={{
+          background: 'linear-gradient(135deg, rgba(92, 244, 255, 0.2), rgba(177, 140, 255, 0.2))',
+          border: '1px solid rgba(92, 244, 255, 0.4)',
+          color: '#5cf4ff',
+          fontSize: '0.875rem',
+          fontWeight: '600',
+          cursor: 'pointer',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em'
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, rgba(92, 244, 255, 0.3), rgba(177, 140, 255, 0.3))';
+          (e.currentTarget as HTMLElement).style.borderColor = 'rgba(92, 244, 255, 0.6)';
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, rgba(92, 244, 255, 0.2), rgba(177, 140, 255, 0.2))';
+          (e.currentTarget as HTMLElement).style.borderColor = 'rgba(92, 244, 255, 0.4)';
+        }}
+      >
+        <span>←</span>
+        <span>GameBuddies</span>
+      </button>
+    );
+  }
+
+  // Button variant for lobby display
   return (
     <div className="gamebuddies-return">
       <button
         onClick={() => isHost ? setShowOptions(true) : handleReturn('individual')}
         style={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          color: 'white',
+          background: 'linear-gradient(135deg, #5cf4ff 0%, #b18cff 100%)',
+          color: '#001a1a',
           border: 'none',
           borderRadius: '10px',
           padding: '15px 30px',
           fontSize: '16px',
           fontWeight: 'bold',
           cursor: 'pointer',
-          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)'
+          boxShadow: '0 4px 15px rgba(92, 244, 255, 0.3)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.15em',
+          transition: 'all 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(92, 244, 255, 0.5)';
+          (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 15px rgba(92, 244, 255, 0.3)';
+          (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
         }}
       >
-        Return to GameBuddies
+        ← Return to GameBuddies
       </button>
     </div>
   );

@@ -249,6 +249,17 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
         </button>
       )}
 
+      {/* GameBuddies Return Button (Inline) */}
+      {lobby.isGameBuddiesRoom && (
+        <GameBuddiesReturnButton
+          roomCode={lobby.code}
+          socket={socket}
+          isHost={isHost}
+          players={lobby.players}
+          variant="button"
+        />
+      )}
+
       {/* Settings Section (Collapsible) */}
       {isHost && (
         <div
@@ -326,13 +337,6 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
               </div>
             </div>
           )}
-        </div>
-      )}
-
-      {/* GameBuddies Return Button */}
-      {lobby.isGameBuddiesRoom && (
-        <div className="fixed top-6 right-6 z-50">
-          <GameBuddiesReturnButton roomCode={lobby.code} socket={socket} />
         </div>
       )}
     </div>
