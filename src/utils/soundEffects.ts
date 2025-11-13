@@ -32,7 +32,7 @@ class SoundEffectsManager {
 
     Object.entries(soundFiles).forEach(([key, path]) => {
       try {
-        const audio = new Audio(path);
+        const audio = new Audio(import.meta.env.BASE_URL + path);
         audio.volume = this.volume;
         this.sounds.set(key as SoundType, audio);
       } catch (error) {
