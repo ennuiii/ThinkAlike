@@ -1,0 +1,3943 @@
+
+╔════════════════════════════════════════════════════════════╗
+║      Socket.IO Load Test - unified-game-server            ║
+║      Server: https://ddf-server.onrender.com
+║      Ramp Profile: 5000 connections
+╚════════════════════════════════════════════════════════════╝
+  
+
+🚀 Ramping up from 0 to 5000 connections (5000 new connections)
+  ↳ Connected: 10/5000
+  ↳ Connected: 20/5000
+  ↳ Connected: 30/5000
+  ↳ Connected: 40/5000
+  ↳ Connected: 50/5000
+  ↳ Connected: 60/5000
+  ↳ Connected: 70/5000
+  ↳ Connected: 80/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         90/90
+  In Rooms:          81
+  Unique Rooms:      9
+  Join Attempts:     72
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      0
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 90/5000
+  ↳ Connected: 100/5000
+[Player 104] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 102] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 110/5000
+[Player 115] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 119] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 112] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 120/5000
+[Player 122] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 130/5000
+[Player 138] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 140/5000
+[Player 142] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 143] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 145] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 150/5000
+[Player 155] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 160/5000
+  ↳ Connected: 170/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         180/180
+  In Rooms:          160
+  Unique Rooms:      18
+  Join Attempts:     153
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      11
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 180/5000
+  ↳ Connected: 190/5000
+  ↳ Connected: 200/5000
+  ↳ Connected: 210/5000
+  ↳ Connected: 220/5000
+  ↳ Connected: 230/5000
+[Player 231] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 240/5000
+[Player 241] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 250/5000
+[Player 253] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 260/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         260/260
+  In Rooms:          237
+  Unique Rooms:      26
+  Join Attempts:     225
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      14
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 261] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 262] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 264] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 270/5000
+[Player 273] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 280/5000
+[Player 284] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 290/5000
+[Player 293] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 300/5000
+  ↳ Connected: 310/5000
+[Player 313] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 311] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 320/5000
+  ↳ Connected: 330/5000
+  ↳ Connected: 340/5000
+[Player 347] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 350/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         350/350
+  In Rooms:          318
+  Unique Rooms:      35
+  Join Attempts:     306
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      23
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 355] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 360/5000
+[Player 364] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 363] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 370/5000
+[Player 377] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 371] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 380/5000
+  ↳ Connected: 390/5000
+[Player 392] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 400/5000
+[Player 405] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 409] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 410/5000
+  ↳ Connected: 420/5000
+[Player 423] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 430/5000
+[Player 431] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         440/440
+  In Rooms:          398
+  Unique Rooms:      44
+  Join Attempts:     387
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      33
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 440/5000
+[Player 444] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 442] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 450/5000
+  ↳ Connected: 460/5000
+[Player 467] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 470/5000
+[Player 474] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 478] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 480/5000
+[Player 484] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 489] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 490/5000
+  ↳ Connected: 500/5000
+  ↳ Connected: 510/5000
+[Player 516] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         520/520
+  In Rooms:          470
+  Unique Rooms:      52
+  Join Attempts:     459
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      41
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 520/5000
+[Player 527] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 530/5000
+[Player 534] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 538] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 533] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 540/5000
+  ↳ Connected: 550/5000
+[Player 552] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 557] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 558] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 560/5000
+[Player 568] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 570/5000
+[Player 578] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 572] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 580/5000
+[Player 588] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 587] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 590/5000
+  ↳ Connected: 600/5000
+[Player 603] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 609] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 605] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         610/610
+  In Rooms:          545
+  Unique Rooms:      61
+  Join Attempts:     540
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      56
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 610/5000
+[Player 612] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 615] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 620/5000
+[Player 629] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 630/5000
+[Player 631] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 640/5000
+[Player 642] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 644] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 646] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 650/5000
+  ↳ Connected: 660/5000
+[Player 662] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 670/5000
+[Player 671] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 680/5000
+[Player 686] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 690/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         700/700
+  In Rooms:          615
+  Unique Rooms:      69
+  Join Attempts:     621
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      66
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 697] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 700/5000
+  ↳ Connected: 710/5000
+[Player 719] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 720/5000
+[Player 726] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 725] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 730/5000
+[Player 734] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 740/5000
+[Player 745] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 750/5000
+[Player 754] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 760/5000
+  ↳ Connected: 770/5000
+[Player 774] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 778] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 780/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         780/780
+  In Rooms:          696
+  Unique Rooms:      78
+  Join Attempts:     693
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      75
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 789] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 790/5000
+[Player 793] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 795] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 800/5000
+[Player 807] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 810/5000
+  ↳ Connected: 820/5000
+[Player 823] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 824] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 825] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 830/5000
+  ↳ Connected: 840/5000
+[Player 845] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 850/5000
+  ↳ Connected: 860/5000
+  ↳ Connected: 870/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         870/870
+  In Rooms:          778
+  Unique Rooms:      87
+  Join Attempts:     774
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      83
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 874] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 880/5000
+  ↳ Connected: 890/5000
+  ↳ Connected: 900/5000
+  ↳ Connected: 910/5000
+[Player 914] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 918] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 920/5000
+[Player 921] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 929] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 926] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 924] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 930/5000
+  ↳ Connected: 940/5000
+[Player 942] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 950/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         950/950
+  In Rooms:          850
+  Unique Rooms:      95
+  Join Attempts:     846
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      91
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 958] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 960/5000
+[Player 969] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 970/5000
+  ↳ Connected: 980/5000
+[Player 984] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 990/5000
+  ↳ Connected: 1000/5000
+[Player 1003] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1010/5000
+[Player 1015] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1020/5000
+  ↳ Connected: 1030/5000
+[Player 1031] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1040/1040
+  In Rooms:          934
+  Unique Rooms:      104
+  Join Attempts:     927
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      97
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1040/5000
+[Player 1046] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1050/5000
+[Player 1055] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1059] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1060/5000
+  ↳ Connected: 1070/5000
+[Player 1072] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1080/5000
+[Player 1087] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1090/5000
+[Player 1097] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1100/5000
+  ↳ Connected: 1110/5000
+[Player 1113] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1118] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1120/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1120/1120
+  In Rooms:          1006
+  Unique Rooms:      112
+  Join Attempts:     999
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      105
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1130/5000
+[Player 1138] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1140/5000
+[Player 1148] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1146] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1150/5000
+[Player 1157] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1160/5000
+[Player 1168] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1165] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1170/5000
+[Player 1174] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1180/5000
+  ↳ Connected: 1190/5000
+  ↳ Connected: 1200/5000
+[Player 1202] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1206] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1209/1209
+  In Rooms:          1085
+  Unique Rooms:      121
+  Join Attempts:     1079
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      114
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1210/5000
+  ↳ Connected: 1220/5000
+  ↳ Connected: 1230/5000
+[Player 1239] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1231] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1240/5000
+[Player 1242] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1243] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1250/5000
+  ↳ Connected: 1260/5000
+[Player 1269] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1261] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1263] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1270/5000
+[Player 1276] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1280/5000
+[Player 1281] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1289] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1290/1290
+  In Rooms:          1157
+  Unique Rooms:      129
+  Join Attempts:     1152
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      124
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1290/5000
+[Player 1291] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1298] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1299] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1300/5000
+[Player 1309] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1301] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1310/5000
+  ↳ Connected: 1320/5000
+  ↳ Connected: 1330/5000
+[Player 1337] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1335] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1340/5000
+[Player 1346] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1341] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1345] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1343] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1350/5000
+  ↳ Connected: 1360/5000
+[Player 1362] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1370/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1380/1380
+  In Rooms:          1229
+  Unique Rooms:      138
+  Join Attempts:     1233
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      136
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 1375] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1379] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1372] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1380/5000
+  ↳ Connected: 1390/5000
+  ↳ Connected: 1400/5000
+  ↳ Connected: 1410/5000
+  ↳ Connected: 1420/5000
+[Player 1424] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1421] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1427] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1430/5000
+  ↳ Connected: 1440/5000
+[Player 1445] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1444] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1450/5000
+[Player 1459] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1452] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1460/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1460/1460
+  In Rooms:          1305
+  Unique Rooms:      146
+  Join Attempts:     1305
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      146
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 1461] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1470/5000
+[Player 1474] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1480/5000
+[Player 1484] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1486] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1490/5000
+[Player 1495] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1500/5000
+[Player 1505] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1510/5000
+[Player 1517] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1518] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1520/5000
+[Player 1523] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1524] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1530/5000
+[Player 1531] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1537] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1540/5000
+[Player 1543] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1549] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1545] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1547] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1550/1550
+  In Rooms:          1379
+  Unique Rooms:      155
+  Join Attempts:     1386
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      162
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1550/5000
+  ↳ Connected: 1560/5000
+[Player 1566] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1570/5000
+  ↳ Connected: 1580/5000
+  ↳ Connected: 1590/5000
+  ↳ Connected: 1600/5000
+[Player 1606] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1610/5000
+  ↳ Connected: 1620/5000
+  ↳ Connected: 1630/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1640/1640
+  In Rooms:          1461
+  Unique Rooms:      164
+  Join Attempts:     1467
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      164
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 1635] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1632] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1640/5000
+  ↳ Connected: 1650/5000
+[Player 1655] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1654] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1660/5000
+[Player 1661] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1669] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1670/5000
+[Player 1677] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1680/5000
+[Player 1686] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1689] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1690/5000
+[Player 1693] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1696] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1700/5000
+[Player 1706] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1703] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1701] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1710/5000
+[Player 1714] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1720/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1720/1720
+  In Rooms:          1532
+  Unique Rooms:      172
+  Join Attempts:     1539
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      179
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 1725] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1727] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1730/5000
+[Player 1739] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1740/5000
+[Player 1745] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1748] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1750/5000
+[Player 1755] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1754] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1760/5000
+[Player 1769] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1770/5000
+[Player 1774] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1780/5000
+  ↳ Connected: 1790/5000
+  ↳ Connected: 1800/5000
+[Player 1804] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1810/1810
+  In Rooms:          1612
+  Unique Rooms:      181
+  Join Attempts:     1620
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      189
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1810/5000
+[Player 1815] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1820/5000
+[Player 1823] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1821] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1828] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1830/5000
+[Player 1831] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1839] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1840/5000
+  ↳ Connected: 1850/5000
+[Player 1856] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1853] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1859] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1860/5000
+  ↳ Connected: 1870/5000
+[Player 1874] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1871] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1879] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1880/5000
+[Player 1881] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1882] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1887] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1890/1890
+  In Rooms:          1677
+  Unique Rooms:      189
+  Join Attempts:     1692
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      204
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1890/5000
+[Player 1894] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1899] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1891] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1900/5000
+  ↳ Connected: 1910/5000
+[Player 1911] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1920/5000
+[Player 1926] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1922] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1929] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1930/5000
+[Player 1938] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1940/5000
+[Player 1942] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1950/5000
+[Player 1959] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1960/5000
+[Player 1967] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1961] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         1969/1969
+  In Rooms:          1744
+  Unique Rooms:      197
+  Join Attempts:     1763
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      216
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 1970/5000
+[Player 1978] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 1976] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 1980/5000
+  ↳ Connected: 1990/5000
+[Player 1996] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2000/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2010/2010
+  In Rooms:          1782
+  Unique Rooms:      201
+  Join Attempts:     1800
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      219
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2010/5000
+[Player 2018] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2020/5000
+  ↳ Connected: 2030/5000
+[Player 2031] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2040/5000
+[Player 2047] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2050/2050
+  In Rooms:          1819
+  Unique Rooms:      205
+  Join Attempts:     1836
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      222
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2050/5000
+[Player 2054] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2059] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2058] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2060/5000
+[Player 2067] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2070/5000
+[Player 2074] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2080/5000
+[Player 2087] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2089] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2083] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2090/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2090/2090
+  In Rooms:          1851
+  Unique Rooms:      209
+  Join Attempts:     1872
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      230
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2100/5000
+[Player 2101] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2102] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2110/5000
+[Player 2113] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2120/5000
+  ↳ Connected: 2130/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2133/2133
+  In Rooms:          1888
+  Unique Rooms:      213
+  Join Attempts:     1911
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      233
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2139/2139
+  In Rooms:          1897
+  Unique Rooms:      214
+  Join Attempts:     1916
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      233
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2139/2139
+  In Rooms:          1897
+  Unique Rooms:      214
+  Join Attempts:     1916
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      233
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2140/5000
+[Player 2142] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2150/5000
+[Player 2152] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2155] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2156] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2160/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2159/2159
+  In Rooms:          1913
+  Unique Rooms:      216
+  Join Attempts:     1934
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      237
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 2167] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2170/5000
+[Player 2177] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2180/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2179/2179
+  In Rooms:          1931
+  Unique Rooms:      218
+  Join Attempts:     1952
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      239
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2190/5000
+[Player 2197] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2195] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2200/5000
+[Player 2202] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2210/5000
+[Player 2211] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2219] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2218/2218
+  In Rooms:          1965
+  Unique Rooms:      222
+  Join Attempts:     1987
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      244
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2218/2218
+  In Rooms:          1965
+  Unique Rooms:      222
+  Join Attempts:     1987
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      244
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2218/2218
+  In Rooms:          1965
+  Unique Rooms:      222
+  Join Attempts:     1987
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      244
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2220/5000
+[Player 2229] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2230/5000
+[Player 2237] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2236] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2239] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2240/5000
+[Player 2246] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2243] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2250/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2248/2248
+  In Rooms:          1989
+  Unique Rooms:      225
+  Join Attempts:     2014
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      250
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 2252] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2254] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2260/5000
+[Player 2269] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2265] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2268] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2270/5000
+  ↳ Connected: 2280/5000
+  ↳ Connected: 2290/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2288/2288
+  In Rooms:          2024
+  Unique Rooms:      229
+  Join Attempts:     2050
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      255
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 2293] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2300/5000
+  ↳ Connected: 2310/5000
+  ↳ Connected: 2320/5000
+[Player 2321] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2323] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2328] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2329] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2330/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2331/2331
+  In Rooms:          2061
+  Unique Rooms:      233
+  Join Attempts:     2089
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      260
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 2333] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2340/5000
+[Player 2332] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2349] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2350/5000
+[Player 2352] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2357] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2360/5000
+[Player 2369] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2363] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2370/5000
+[Player 2372] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2380/5000
+[Player 2388] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2387] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2389] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2386] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2390/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2389/2389
+  In Rooms:          2108
+  Unique Rooms:      239
+  Join Attempts:     2141
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      272
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+[Player 2395] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2391] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2400/5000
+  ↳ Connected: 2410/5000
+[Player 2411] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2420/5000
+  ↳ Connected: 2430/5000
+[Player 2432] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2440/5000
+[Player 2448] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2445] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2450/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2458/2458
+  In Rooms:          2171
+  Unique Rooms:      246
+  Join Attempts:     2203
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      278
+  Total Disconnected: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2460/5000
+  ↳ Connected: 2470/5000
+  ↳ Connected: 2480/5000
+[Player 2483] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2489] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2486] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2487] Connection error: { message: 'Cannot join room (full or already started)' }
+[Player 2485] Connection error: { message: 'Cannot join room (full or already started)' }
+  ↳ Connected: 2490/5000
+[Player 2497] Connection error: { message: 'Cannot join room (full or already started)' }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 5
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 17
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2500/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 42
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 64
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2510/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 98
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 144
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 189
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2520/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 254
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 313
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2530/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 380
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 454
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 538
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2540/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 637
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 734
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2550/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 839
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 954
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1071
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2560/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1202
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1324
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2570/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1470
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1614
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1752
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2580/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 1914
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 2089
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 2252
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2590/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 2437
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 2619
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2600/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 2827
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 3025
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 3232
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2610/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 3450
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 3629
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2620/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 3797
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 3999
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 4192
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2630/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 4396
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 4592
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2640/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 4840
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 5104
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 5362
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2650/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 5644
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 5931
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2660/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 6223
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 6507
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 6805
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2670/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 7138
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 7458
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+  ↳ Connected: 2680/5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 7766
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 METRICS (Level 0/1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔷 CONNECTION METRICS:
+  Connected:         2495/2495
+  In Rooms:          2202
+  Unique Rooms:      250
+  Join Attempts:     2236
+  Join Successes:    0
+  Join Failures:     0
+
+🔷 PHASE 2 OPTIMIZATION METRICS:
+  📦 Delta Updates:
+    Avg Reduction:   0.0%
+    Bytes Saved:     0.00 KB
+
+  ⚡ Client Batching:
+    Actions Emitted: 0
+    Batches Sent:    0
+    Avg Batch Size:  0
+    Emit Reduction:  0.0%
+
+  📡 Broadcast Efficiency:
+    Actions/Broadcast: 0
+    Avg Size:        0 KB
+
+🔷 SUPABASE QUESTION LOADING:
+  Game Starts Initiated: 0
+  Game Starts Completed: 0
+  Questions Loaded: 0
+  Load Success Rate: 0%
+
+🔷 ERROR METRICS:
+  Total Failed:      284
+  Total Disconnected: 8124
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  
