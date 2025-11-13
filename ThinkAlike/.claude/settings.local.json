@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-Object Id, ProcessName, StartTime)",
+      "Read(//c//**)",
+      "Read(//c/GamebuddieGamesTemplate/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Bumper Balls Arena\n\n3D multiplayer battle game where players bump each other off a floating platform.\n\nFeatures:\n- Real-time physics simulation (60Hz server-side)\n- 3D graphics with React Three Fiber\n- Sprint mechanic with stamina system\n- Mario Party-style collision physics\n- Countdown system with restart bug fix\n- GameBuddies integration\n- Webcam support\n- Chat system\n- Mobile responsive\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run build:render:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run build:*)",
+      "Read(//c/Users/Basti/ClueScale/**)",
+      "Bash(cat:*)",
+      "Read(//c/Users/Basti/WebCamTEst/**)",
+      "WebSearch",
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(tree:*)",
+      "Bash(move SKILL.md .claudeskillsgamebuddies-game-generatorSKILL.md)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
