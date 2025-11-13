@@ -118,7 +118,7 @@ const Home: React.FC<HomeProps> = ({ onCreateRoom, onJoinRoom, gameBuddiesSessio
         <div className="home-header">
           <span className="eyebrow">Live word sync</span>
           <img
-            src="/logo.png"
+            src={import.meta.env.BASE_URL + 'logo.png'}
             alt="Minds thinking alike"
             className="hero-logo"
           />
