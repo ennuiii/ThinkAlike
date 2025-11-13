@@ -14,6 +14,7 @@ import WebcamDisplay from './components/WebcamDisplay';
 import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
+import SettingsButton from './components/SettingsButton';
 import WaveBackground from './components/backgrounds/WaveBackground';
 import FloatingBubbles from './components/backgrounds/FloatingBubbles';
 import './App.css';
@@ -392,6 +393,7 @@ function AppContent() {
     <div className="app-root">
       {theme === 'neural-sync' ? <WaveBackground /> : <FloatingBubbles />}
       <ThemeToggle />
+      <SettingsButton />
         {webcamConfig ? (
           <WebcamConfigProvider config={webcamConfig}>
             <WebRTCProvider>
