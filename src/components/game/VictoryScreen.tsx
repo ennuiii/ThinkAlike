@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Lobby } from '../../types';
 import { Confetti } from '../animations/Confetti';
+import { soundEffects } from '../../utils/soundEffects';
 
 interface VictoryScreenProps {
   lobby: Lobby;
@@ -15,6 +16,11 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
 
   // Calculate stats
   const totalAttempts = lobby.gameData?.rounds.length || 0;
+
+  // Play victory sound on mount
+  useEffect(() => {
+    soundEffects.play('win');
+  }, []);
 
   return (
     <div className="victory-container">

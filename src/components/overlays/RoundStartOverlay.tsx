@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './RoundStartOverlay.css';
+import { soundEffects } from '../../utils/soundEffects';
 
 interface RoundStartOverlayProps {
   roundNumber: number;
@@ -10,6 +11,9 @@ export const RoundStartOverlay: React.FC<RoundStartOverlayProps> = ({ roundNumbe
   const [displayNumber, setDisplayNumber] = useState<number | string>(3);
 
   useEffect(() => {
+    // Play countdown sound at start
+    soundEffects.play('countdown');
+
     // Timeline for countdown: 3 (1s) -> 2 (1s) -> 1 (1s) -> GO! (0.5s)
     const timings = [
       { number: 3, delay: 0 },

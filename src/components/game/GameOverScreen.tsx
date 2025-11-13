@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Lobby } from '../../types';
+import { soundEffects } from '../../utils/soundEffects';
 
 interface GameOverScreenProps {
   lobby: Lobby;
@@ -10,6 +11,11 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({ lobby, onRestart
   const roundsCompleted = lobby.gameData?.currentRound || 0;
   const totalAttempts = lobby.gameData?.rounds.length || 0;
   const matchedRounds = lobby.gameData?.rounds.filter(r => r.wasMatch).length || 0;
+
+  // Play game over sound on mount
+  useEffect(() => {
+    soundEffects.play('lose');
+  }, []);
 
   return (
     <div className="gameover-container">
