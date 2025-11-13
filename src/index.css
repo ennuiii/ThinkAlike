@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme system is now defined in App.css */
+/* This file contains Tailwind utilities and component styles only */
+
+@layer base {
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full font-sans;
+    font-family: var(--font-body);
+    background: transparent;
+    min-height: 100vh;
+    color: var(--text-primary);
+  }
+
+  #root {
+    @apply min-h-screen;
+    background: transparent;
+  }
+
+  * {
+    @apply border-slate-600;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+  }
+
+  /* Force Space Grotesk on all text elements */
+  body, div, span, p, a, button, input, textarea, select, label,
+  h1, h2, h3, h4, h5, h6, li, td, th, option {
+    font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+  }
+
+  /* Override any white backgrounds */
+  .bg-white {
+    @apply bg-slate-800 !important;
+  }
+
+  .bg-gray-50 {
+    @apply bg-slate-900 !important;
+  }
+
+  .bg-gray-100 {
+    @apply bg-slate-800 !important;
+  }
+
+  /* Ensure the entire app has dark background */
+  div[class*="min-h-screen"] {
+    background: linear-gradient(135deg,
+      var(--bg-dark) 0%,
+      var(--bg-secondary) 25%,
+      var(--bg-tertiary) 50%,
+      var(--bg-quaternary) 75%,
+      var(--bg-dark) 100%) !important;
+    background-attachment: fixed;
+  }
+
+  /* Ensure all text is readable */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-100;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  p {
+    @apply text-slate-200;
+  }
+
+  label {
+    @apply text-slate-200;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  /* Ensure select elements are styled properly */
+  select {
+    @apply bg-slate-700 text-slate-100;
+  }
+
+  /* Ensure textarea elements are styled properly */
+  textarea {
+    @apply bg-slate-700 text-slate-100;
+  }
+
+  /* Fix any remaining white text on white background issues */
+  .text-gray-600 {
+    @apply text-slate-300;
+  }
+
+  .text-gray-700 {
+    @apply text-slate-200;
+  }
+
+  .text-gray-800 {
+    @apply text-slate-100;
+  }
+
+  .text-gray-900 {
+    @apply text-slate-50;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .btn-primary {
+    @apply text-white shadow-lg;
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    box-shadow: 0 10px 15px -3px var(--glow-primary);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, var(--primary-dark), var(--primary));
+  }
+
+  .btn-primary:focus {
+    --tw-ring-color: var(--primary);
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-slate-700 to-slate-600 text-slate-100 hover:from-slate-600 hover:to-slate-500 focus:ring-slate-500 border border-slate-500 shadow-lg shadow-slate-500/20;
+  }
+
+  .btn-success {
+    @apply bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 focus:ring-emerald-500 shadow-lg shadow-emerald-500/30;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-600 to-rose-600 text-white hover:from-red-700 hover:to-rose-700 focus:ring-red-500 shadow-lg shadow-red-500/30;
+  }
+
+  .btn-warning {
+    @apply bg-gradient-to-r from-amber-600 to-orange-600 text-white hover:from-amber-700 hover:to-orange-700 focus:ring-amber-500 shadow-lg shadow-amber-500/30;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg font-semibold;
+  }
+
+  .card {
+    @apply bg-slate-800/80 rounded-2xl shadow-2xl border border-slate-600/50 p-6 transition-all duration-300 hover:shadow-purple-500/10 hover:bg-slate-800/90 hover:border-slate-500/60;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-slate-800/90 to-slate-900/80 rounded-2xl shadow-2xl border border-slate-600/50 p-6 transition-all duration-300 hover:shadow-purple-500/10;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 bg-slate-700/80 text-slate-100 placeholder-slate-400;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .slide-down {
+    animation: slideDown 0.4s ease-out;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .timer-pulse {
+    animation: timerPulse 1s ease-in-out infinite;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #3b82f6, #8b5cf6) border-box;
+    border: 2px solid transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes timerPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Glass variables removed - now using solid panels defined in App.css */
+
+/* Main app layout */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-dark);
+}
+
+/* Webcam toggle button - positioned in bottom center */
+.webcam-toggle-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(124, 58, 237, 0.9));
+  color: white;
+  border: 1px solid var(--panel-border);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.5);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+}
+
+.webcam-toggle-btn:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.7);
+}
+
+.webcam-toggle-btn:active {
+  transform: translateX(-50%) translateY(-1px);
+}
+
+/* Webcam top bar */
+.webcam-top-bar {
+  padding: 0.75rem;
+  background: var(--panel-bg);
+
+  border-bottom: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  z-index: 40;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Reduce webcam video size when videos are present */
+.webcam-top-bar video {
+  max-height: 220px;
+  border-radius: 0.75rem;
+}
+
+/* Fixed: aspect-video containers with natural sizing (like DDF) */
+.webcam-top-bar .aspect-video {
+  aspect-ratio: 16 / 9;
+  max-height: 220px;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* When video grid is present, limit the container height */
+.webcam-top-bar:has(.grid) {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.webcam-top-bar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* Add margin to video grid to prevent cutoff at bottom */
+.webcam-top-bar .grid {
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* Main container - holds game content and sidebar */
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Game content area */
+.game-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  background: var(--bg-dark);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.game-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* Right sidebar */
+.right-sidebar {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-bg);
+
+  border-left: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  overflow: hidden;
+}
+
+/* PlayerList in sidebar */
+.player-list {
+  flex: 0 0 auto;
+  max-height: 50%;
+  overflow-y: auto;
+  border-bottom: 1px solid var(--panel-border);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.player-list::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+.player-list.compact {
+  max-height: 40%;
+}
+
+.player-list-header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+}
+
+.player-list-content {
+  padding: 0.5rem;
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.player-item:hover {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.player-item.host {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.player-item.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.player-item.disconnected {
+  opacity: 0.6;
+  border-color: rgba(251, 146, 60, 0.4);
+}
+
+/* Chat in sidebar */
+.sidebar-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Hide scrollbars for chat */
+.sidebar-chat {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.sidebar-chat::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* Mobile-specific webcam grid */
+.webcam-mobile-grid {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.webcam-mobile-grid.single {
+  grid-template-columns: 1fr;
+}
+
+/* Mobile aspect ratio - square instead of video */
+.webcam-mobile-compact {
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Video feed inactive state */
+.webcam-feed-inactive {
+  opacity: 0.7;
+}
+
+/* Auto-expand webcam on desktop */
+.webcam-auto-expand {
+  grid-column: span 2;
+}
+
+/* Mobile toggle button styling */
+.webcam-mobile-toggle {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Mobile controls */
+.webcam-mobile-controls {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile minimized state */
+.webcam-mobile-minimized {
+  max-height: 60px;
+  overflow: hidden;
+}
+
+/* Hide inactive feeds on mobile */
+.webcam-mobile-hide-inactive .video-feed:not(.active):not(.self) {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .right-sidebar {
+    width: 100%;
+    max-height: 60vh;
+    border-left: none;
+    border-top: 1px solid var(--panel-border);
+  }
+
+  .game-content {
+    padding: 1rem;
+  }
+
+  .player-list {
+    max-height: 30vh;
+  }
+
+  .webcam-top-bar video {
+    max-height: 150px;
+  }
+
+  .webcam-top-bar {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  .webcam-top-bar {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .webcam-top-bar video {
+    max-height: 120px;
+  }
+
+  .game-content {
+    padding: 0.75rem;
+    padding-bottom: 90px; /* Space for toggle button */
+  }
+
+  /* Webcam toggle button - more prominent on mobile */
+  .webcam-toggle-btn {
+    bottom: 80px;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  /* Mobile grid adjustments */
+  .webcam-mobile-grid {
+    gap: 0.375rem;
+    padding: 0;
+  }
+
+  .webcam-mobile-grid.single {
+    max-height: 180px;
+  }
+}
+
+/* Container for backwards compatibility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--glow-primary);
+}
+
+/* Round info styling */
+.round-info {
+  background: var(--panel-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--panel-border);
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+}
+
+.badge.host {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #000;
+}
+
+.badge.you {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+
+/* Button danger override for backwards compatibility */
+button.danger {
+  background: linear-gradient(to right, var(--danger-500), var(--danger-600));
+}
+
+button.danger:hover {
+  background: linear-gradient(to right, var(--danger-600), var(--danger-500));
+}

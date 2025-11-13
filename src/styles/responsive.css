@@ -1,0 +1,501 @@
+/* ========================================
+   RESPONSIVE DESIGN - Mobile First Approach
+   ======================================== */
+
+/* ========================================
+   Mobile Portrait - Base Styles
+   Small phones: 320px - 480px
+   ======================================== */
+@media (max-width: 480px) {
+  /* Typography Scaling */
+  html {
+    font-size: 14px;
+  }
+
+  /* App Layout */
+  .app-root {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+
+  .app-layout {
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Webcam Bar - Stack vertically on mobile */
+  .webcam-top-bar {
+    position: relative;
+    width: 100%;
+    max-height: 120px;
+    padding: 0.5rem;
+  }
+
+  .webcam-container {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .webcam-item {
+    min-width: 80px;
+    width: 80px;
+    height: 60px;
+  }
+
+  .webcam-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Main Container */
+  .main-container {
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  /* Right Sidebar - Hide on mobile, show as modal/drawer */
+  .right-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+
+    transform: translateY(calc(100% - 60px));
+    transition: transform 0.3s ease;
+    z-index: 999;
+    max-height: 70vh;
+    border-radius: 20px 20px 0 0;
+    padding: 1rem;
+  }
+
+  .right-sidebar.expanded {
+    transform: translateY(0);
+  }
+
+  /* Lobby Components */
+  .lobby-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .room-code-display {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .lobby-settings {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    width: 100%;
+  }
+
+  /* Forms */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* Player List */
+  .player-list {
+    max-height: 300px;
+  }
+
+  .player-item {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  /* Chat Window */
+  .chat-window {
+    height: 300px;
+  }
+
+  .chat-messages {
+    max-height: 200px;
+  }
+
+  .chat-input-container {
+    padding: 0.5rem;
+  }
+
+  /* Game Component */
+  .game-content {
+    padding: 1rem;
+  }
+
+  /* Cards */
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    width: 95%;
+    margin: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  /* Touch targets - minimum 44px */
+  button,
+  a,
+  .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Hide desktop-only elements */
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Mobile Landscape
+   480px - 768px
+   ======================================== */
+@media (min-width: 481px) and (max-width: 768px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape */
+  .app-layout {
+    flex-direction: row;
+  }
+
+  .webcam-top-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    max-height: none;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .webcam-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .main-container {
+    margin-left: 120px;
+    padding: 0.5rem 1rem;
+  }
+
+  .right-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    width: 280px;
+    transform: translateX(calc(100% - 40px));
+    border-radius: 20px 0 0 20px;
+  }
+
+  .right-sidebar.expanded {
+    transform: translateX(0);
+  }
+
+  /* Reduce header sizes */
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.1rem; }
+}
+
+/* ========================================
+   Tablet Portrait
+   768px - 1024px
+   ======================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* App Layout */
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .webcam-top-bar {
+    height: 100px;
+    padding: 0.75rem;
+  }
+
+  .webcam-item {
+    width: 120px;
+    height: 90px;
+  }
+
+  .main-container {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .game-content {
+    flex: 1;
+  }
+
+  .right-sidebar {
+    position: relative;
+    width: 300px;
+    transform: none;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  /* Lobby adjustments */
+  .lobby-settings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Buttons can be inline */
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+    min-width: 120px;
+  }
+
+  /* Chat window larger */
+  .chat-window {
+    height: 400px;
+  }
+
+  .chat-messages {
+    max-height: 300px;
+  }
+}
+
+/* ========================================
+   Tablet Landscape & Small Desktop
+   1024px - 1366px
+   ======================================== */
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .webcam-top-bar {
+    height: 120px;
+  }
+
+  .webcam-item {
+    width: 140px;
+    height: 105px;
+  }
+
+  .main-container {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .right-sidebar {
+    width: 350px;
+  }
+
+  .chat-window {
+    height: 500px;
+  }
+}
+
+/* ========================================
+   Desktop
+   1366px - 1920px
+   ======================================== */
+@media (min-width: 1366px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .webcam-top-bar {
+    height: 140px;
+  }
+
+  .webcam-item {
+    width: 160px;
+    height: 120px;
+  }
+
+  .main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .right-sidebar {
+    width: 380px;
+  }
+}
+
+/* ========================================
+   Large Desktop
+   1920px+
+   ======================================== */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+
+  .main-container {
+    max-width: 1800px;
+  }
+
+  .webcam-item {
+    width: 180px;
+    height: 135px;
+  }
+
+  .right-sidebar {
+    width: 420px;
+  }
+}
+
+/* ========================================
+   Orientation-specific adjustments
+   ======================================== */
+
+/* Portrait orientation prompt */
+@media (max-width: 768px) and (orientation: landscape) {
+  .orientation-prompt {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-dark);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .orientation-prompt::before {
+    content: '📱';
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: rotate 2s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+/* ========================================
+   Accessibility - Reduced Motion
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .webcam-top-bar,
+  .webcam-toggle-btn,
+  .chat-window,
+  .right-sidebar {
+    display: none !important;
+  }
+
+  .main-container {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* ========================================
+   Touch Device Optimizations
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Larger touch targets */
+  button,
+  a,
+  .clickable {
+    min-height: 48px;
+    padding: 12px;
+  }
+
+  /* Disable right-click context menu */
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+/* ========================================
+   Safe Area Insets (for devices with notches)
+   ======================================== */
+@supports (padding: max(0px)) {
+  .app-root {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .webcam-toggle-btn {
+    bottom: max(20px, env(safe-area-inset-bottom));
+    right: max(20px, env(safe-area-inset-right));
+  }
+}
