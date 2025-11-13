@@ -255,7 +255,6 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
           roomCode={lobby.code}
           socket={socket}
           isHost={isHost}
-          players={lobby.players}
           variant="button"
         />
       )}

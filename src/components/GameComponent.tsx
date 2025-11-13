@@ -113,7 +113,6 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
               roomCode={lobby.code}
               socket={socket}
               isHost={isHost}
-              players={lobby.players}
               variant="icon"
             />
           )}

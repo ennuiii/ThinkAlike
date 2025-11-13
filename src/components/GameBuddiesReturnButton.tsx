@@ -6,7 +6,6 @@ interface GameBuddiesReturnButtonProps {
   roomCode: string;
   socket: Socket;
   isHost?: boolean;
-  players?: Array<{ id?: string; name?: string }>;
   variant?: 'button' | 'icon'; // 'button' for lobby, 'icon' for compact gameplay display
 }
 
@@ -14,7 +13,6 @@ const GameBuddiesReturnButton: React.FC<GameBuddiesReturnButtonProps> = ({
   roomCode,
   socket,
   isHost = false,
-  players = [],
   variant = 'button'
 }) => {
   const [isReturning, setIsReturning] = useState(false);
