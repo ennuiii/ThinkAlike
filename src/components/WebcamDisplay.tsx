@@ -158,8 +158,8 @@ const VideoFeed: React.FC<VideoFeedProps> = ({
     }
   }, [isLocallyMuted]);
 
-  // Generate heart indicators based on lives - only show for non-gamemaster
-  const heartIndicators = !isGamemaster ? Array.from({ length: 3 }, (_, i) => (
+  // Generate heart indicators based on lives - only show for non-gamemaster and when lives > 0
+  const heartIndicators = !isGamemaster && lives > 0 ? Array.from({ length: 3 }, (_, i) => (
     <Heart
       key={i}
       size={isCompact ? 14 : 18}
