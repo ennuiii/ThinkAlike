@@ -12,23 +12,38 @@ interface SettingsModalProps {
  */
 export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
   const [volume, setVolume] = useState(50);
-  const [isMuted, setIsMuted] = useState(false);
+  const [backgroundMusicEnabled, setBackgroundMusicEnabled] = useState(false);
+  const [soundEffectsEnabled, setSoundEffectsEnabled] = useState(true);
 
   // Load saved settings from localStorage on mount
   useEffect(() => {
+    // Load volume
     const savedVolume = localStorage.getItem('thinkalike-volume');
-    const savedMuted = localStorage.getItem('thinkalike-muted');
-
     if (savedVolume) {
       const vol = parseInt(savedVolume, 10);
       setVolume(vol);
       soundEffects.setVolume(vol / 100);
+      backgroundMusic.setVolume(vol / 100);
     }
 
-    if (savedMuted) {
-      const muted = JSON.parse(savedMuted);
-      setIsMuted(muted);
-      soundEffects.setEnabled(!muted);
+    // Load background music preference
+    const savedBgMusic = localStorage.getItem('thinkalike-background-music-enabled');
+    const bgMusicEnabled = savedBgMusic ? JSON.parse(savedBgMusic) : false;
+    setBackgroundMusicEnabled(bgMusicEnabled);
+    backgroundMusic.setEnabled(bgMusicEnabled);
+
+    // Load sound effects preference
+    const savedSfx = localStorage.getItem('thinkalike-sound-effects-enabled');
+    const sfxEnabled = savedSfx ? JSON.parse(savedSfx) : true;
+    setSoundEffectsEnabled(sfxEnabled);
+    soundEffects.setEnabled(sfxEnabled);
+
+    // Migrate old 'muted' setting if present
+    const oldMuted = localStorage.getItem('thinkalike-muted');
+    if (oldMuted && !savedSfx) {
+      const wasMuted = JSON.parse(oldMuted);
+      localStorage.setItem('thinkalike-sound-effects-enabled', JSON.stringify(!wasMuted));
+      localStorage.removeItem('thinkalike-muted');
     }
   }, []);
 
@@ -42,13 +57,20 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
     localStorage.setItem('thinkalike-volume', String(newVolume));
   };
 
-  // Handle mute toggle (sync both sound effect and background music)
-  const handleMuteToggle = () => {
-    const newMuted = !isMuted;
-    setIsMuted(newMuted);
-    soundEffects.setEnabled(!newMuted);
-    backgroundMusic.setEnabled(!newMuted);
-    localStorage.setItem('thinkalike-muted', JSON.stringify(newMuted));
+  // Handle background music toggle
+  const handleBackgroundMusicToggle = () => {
+    const newEnabled = !backgroundMusicEnabled;
+    setBackgroundMusicEnabled(newEnabled);
+    backgroundMusic.setEnabled(newEnabled);
+    localStorage.setItem('thinkalike-background-music-enabled', JSON.stringify(newEnabled));
+  };
+
+  // Handle sound effects toggle
+  const handleSoundEffectsToggle = () => {
+    const newEnabled = !soundEffectsEnabled;
+    setSoundEffectsEnabled(newEnabled);
+    soundEffects.setEnabled(newEnabled);
+    localStorage.setItem('thinkalike-sound-effects-enabled', JSON.stringify(newEnabled));
   };
 
   // Close on backdrop click
@@ -97,17 +119,31 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
             </div>
           </div>
 
-          {/* Mute Toggle */}
+          {/* Background Music Toggle */}
           <div className="settings-section">
             <label className="settings-toggle">
               <input
                 type="checkbox"
-                checked={isMuted}
-                onChange={handleMuteToggle}
+                checked={backgroundMusicEnabled}
+                onChange={handleBackgroundMusicToggle}
                 className="mute-checkbox"
-                aria-label="Mute all sounds"
+                aria-label="Enable background music"
               />
-              <span className="toggle-label">Mute All Sounds</span>
+              <span className="toggle-label">Enable Background Music</span>
+            </label>
+          </div>
+
+          {/* Sound Effects Toggle */}
+          <div className="settings-section">
+            <label className="settings-toggle">
+              <input
+                type="checkbox"
+                checked={soundEffectsEnabled}
+                onChange={handleSoundEffectsToggle}
+                className="mute-checkbox"
+                aria-label="Enable sound effects"
+              />
+              <span className="toggle-label">Enable Sound Effects</span>
             </label>
           </div>
         </div>

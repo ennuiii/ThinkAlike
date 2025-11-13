@@ -16,6 +16,7 @@ import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import SettingsButton from './components/SettingsButton';
 import { backgroundMusic } from './utils/backgroundMusic';
+import { soundEffects } from './utils/soundEffects';
 import WaveBackground from './components/backgrounds/WaveBackground';
 import FloatingBubbles from './components/backgrounds/FloatingBubbles';
 import './App.css';
@@ -408,6 +409,27 @@ function AppContent() {
       backgroundMusic.stop();
     }
   }, [lobby?.state, lobby]);
+
+  // Initialize audio preferences on app start
+  useEffect(() => {
+    // Load background music preference (default: OFF)
+    const savedBgMusic = localStorage.getItem('thinkalike-background-music-enabled');
+    const bgMusicEnabled = savedBgMusic ? JSON.parse(savedBgMusic) : false;
+    backgroundMusic.setEnabled(bgMusicEnabled);
+
+    // Load sound effects preference (default: ON)
+    const savedSfx = localStorage.getItem('thinkalike-sound-effects-enabled');
+    const sfxEnabled = savedSfx ? JSON.parse(savedSfx) : true;
+    soundEffects.setEnabled(sfxEnabled);
+
+    // Load volume preference (default: 50%)
+    const savedVolume = localStorage.getItem('thinkalike-volume');
+    if (savedVolume) {
+      const vol = parseInt(savedVolume, 10);
+      soundEffects.setVolume(vol / 100);
+      backgroundMusic.setVolume(vol / 100);
+    }
+  }, []); // Run once on app mount
 
   const socket = socketService.getSocket();
   const webcamConfig = socket && lobby ? createGameAdapter(socket, lobby.code, lobby) : null;
