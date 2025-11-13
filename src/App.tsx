@@ -15,6 +15,7 @@ import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import SettingsButton from './components/SettingsButton';
+import { backgroundMusic } from './utils/backgroundMusic';
 import WaveBackground from './components/backgrounds/WaveBackground';
 import FloatingBubbles from './components/backgrounds/FloatingBubbles';
 import './App.css';
@@ -385,6 +386,28 @@ function AppContent() {
         return <div>Unknown game state: {lobby.state}</div>;
     }
   };
+
+  // Control background music based on lobby state
+  useEffect(() => {
+    if (!lobby) {
+      // Stop music when not in a lobby (home page)
+      backgroundMusic.stop();
+      return;
+    }
+
+    const shouldPlayMusic =
+      lobby.state === 'LOBBY_WAITING' ||
+      lobby.state === 'ROUND_PREP' ||
+      lobby.state === 'WORD_INPUT' ||
+      lobby.state === 'REVEAL';
+
+    if (shouldPlayMusic) {
+      backgroundMusic.play();
+    } else if (lobby.state === 'VICTORY' || lobby.state === 'GAME_OVER') {
+      // Stop music at end of game
+      backgroundMusic.stop();
+    }
+  }, [lobby?.state, lobby]);
 
   const socket = socketService.getSocket();
   const webcamConfig = socket && lobby ? createGameAdapter(socket, lobby.code, lobby) : null;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { soundEffects } from '../utils/soundEffects';
+import { backgroundMusic } from '../utils/backgroundMusic';
 
 interface SettingsModalProps {
   onClose: () => void;
@@ -31,19 +32,22 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
     }
   }, []);
 
-  // Handle volume change
+  // Handle volume change (sync both sound effect and background music)
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseInt(e.target.value, 10);
     setVolume(newVolume);
-    soundEffects.setVolume(newVolume / 100);
+    const normalizedVolume = newVolume / 100;
+    soundEffects.setVolume(normalizedVolume);
+    backgroundMusic.setVolume(normalizedVolume);
     localStorage.setItem('thinkalike-volume', String(newVolume));
   };
 
-  // Handle mute toggle
+  // Handle mute toggle (sync both sound effect and background music)
   const handleMuteToggle = () => {
     const newMuted = !isMuted;
     setIsMuted(newMuted);
     soundEffects.setEnabled(!newMuted);
+    backgroundMusic.setEnabled(!newMuted);
     localStorage.setItem('thinkalike-muted', JSON.stringify(newMuted));
   };
 
