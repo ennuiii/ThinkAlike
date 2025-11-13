@@ -23,7 +23,7 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
 
       <div className="victory-content px-4">
         {/* Trophy icon */}
-        <div className="trophy-icon text-5xl sm:text-6xl md:text-7xl">🏆</div>
+        <img src="/trophy.svg" alt="Victory Trophy" className="trophy-icon" />
 
         {/* Victory title */}
         <h1 className="victory-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl">VICTORY!</h1>

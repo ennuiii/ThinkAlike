@@ -355,9 +355,9 @@ body {
   isolation: isolate;
   position: relative;
   background-image: url('/logo.png');
-  background-position: center 10%;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: 200px auto;
+  background-size: 100% auto;
   background-attachment: fixed;
   background-blend-mode: soft-light;
 }

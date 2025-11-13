@@ -459,13 +459,27 @@
 }
 
 .trophy-icon {
-  font-size: 6rem;
-  animation: bounce 1s ease-in-out infinite;
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+  animation: enhancedBounce 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(92, 244, 255, 0.3)) drop-shadow(0 0 40px rgba(177, 140, 255, 0.15));
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+@keyframes enhancedBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-25px) rotate(-5deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg) scale(1.08);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-3deg) scale(1.05);
+  }
 }
 
 .victory-title {
