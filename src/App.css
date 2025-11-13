@@ -353,35 +353,6 @@ body {
 
 .home-shell {
   isolation: isolate;
-  position: relative;
-  background-image: url('/logo.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-attachment: fixed;
-  background-blend-mode: soft-light;
-}
-
-.home-shell::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(9, 15, 32, 0.5) 20%,
-    rgba(9, 15, 32, 0.8) 50%,
-    rgba(9, 15, 32, 0.95) 100%
-  );
-  border-radius: 32px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Ensure content appears above the overlay */
-.home-shell > * {
-  position: relative;
-  z-index: 1;
 }
 
 .hero-orb {
