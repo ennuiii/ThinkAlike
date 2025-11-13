@@ -22,7 +22,7 @@ class SoundEffectsManager {
   private loadSounds() {
     const soundFiles: Record<SoundType, string> = {
       'match': '/sounds/match.mp3',
-      'lose-life': '/sounds/lose-life.mp3',
+      'lose-life': '/music/lose.mp3',
       'timer-tick': '/sounds/timer-tick.mp3',
       'victory': '/sounds/victory.mp3',
       'countdown': '/music/countdown.mp3',
