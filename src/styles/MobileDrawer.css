@@ -1,0 +1,227 @@
+/* ========================================
+   MOBILE DRAWER - Bottom/Side Sheets
+   ======================================== */
+
+.mobile-drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: var(--z-mobile-drawer);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), background var(--transition);
+}
+
+.mobile-drawer-backdrop.open {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Base drawer styles */
+.mobile-drawer {
+  position: fixed;
+  background: var(--bg-card);
+  z-index: calc(var(--z-mobile-drawer) + 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: all var(--transition);
+}
+
+/* Bottom drawer */
+.mobile-drawer-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 80vh;
+  border-radius: 20px 20px 0 0;
+  transform: translateY(100%);
+}
+
+.mobile-drawer-bottom.open {
+  transform: translateY(0);
+}
+
+/* Left drawer */
+.mobile-drawer-left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 350px;
+  border-radius: 0 20px 20px 0;
+  transform: translateX(-100%);
+}
+
+.mobile-drawer-left.open {
+  transform: translateX(0);
+}
+
+/* Right drawer */
+.mobile-drawer-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 350px;
+  border-radius: 20px 0 0 20px;
+  transform: translateX(100%);
+}
+
+.mobile-drawer-right.open {
+  transform: translateX(0);
+}
+
+/* Drawer handle (for bottom sheet) */
+.drawer-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--text-muted);
+  border-radius: 2px;
+  margin: 0.75rem auto 1rem;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* Drawer header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--panel-border);
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.drawer-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.drawer-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.drawer-close-btn:hover {
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+.drawer-close-btn:active {
+  transform: scale(0.95);
+}
+
+/* Drawer content */
+.drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.drawer-content.full-height {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling */
+.drawer-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.drawer-content::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+  border-radius: 3px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+.drawer-content::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .mobile-drawer-left,
+  .mobile-drawer-right {
+    width: 100%;
+    max-width: none;
+  }
+
+  .mobile-drawer-left {
+    border-radius: 0;
+  }
+
+  .mobile-drawer-right {
+    border-radius: 0;
+  }
+
+  .drawer-header {
+    padding: 0.75rem;
+  }
+
+  .drawer-title {
+    font-size: 1.125rem;
+  }
+
+  .drawer-content {
+    padding: 0.75rem;
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (orientation: landscape) {
+  .mobile-drawer-bottom {
+    max-height: 70vh;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-drawer,
+  .mobile-drawer-backdrop {
+    transition: none;
+  }
+
+  .drawer-close-btn:active {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .mobile-drawer-backdrop.open {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .drawer-header {
+    border-bottom-width: 2px;
+  }
+}
