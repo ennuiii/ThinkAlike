@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Camera, CameraOff, Video, VideoOff, ExternalLink, Volume2, VolumeX, Eye, EyeOff, Mic, MicOff, Settings, Sparkles } from 'lucide-react';
 import { useWebRTC } from '../contexts/WebRTCContext';
 import { useWebcamConfig } from '../config/WebcamConfig';
-import { WebcamCarousel } from './WebcamCarousel';
 import ReactDOM from 'react-dom';
 import { DEFAULT_BACKGROUNDS } from '../services/virtualBackgroundService';
 import type { AudioProcessorConfig } from '../services/audioProcessor';
@@ -1507,20 +1506,8 @@ const VideoChatContent: React.FC<{
           </div>
         </div>
       )}
-      {/* Mobile Carousel Layout */}
-      {isMobile && !isPopout && (
-        <WebcamCarousel
-          feeds={videoFeeds.map((feed) => ({
-            playerId: feed.id,
-            stream: feed.stream,
-            playerName: feed.playerName,
-            isActive: feed.isActive,
-            isMyVideo: feed.isSelf,
-            hasCamera: feed.stream !== null,
-          }))}
-          isPreparationMode={isVideoPrepairing}
-        />
-      )}
+      {/* Mobile Carousel Layout - Disabled (now shown in Video drawer) */}
+      {/* Webcams are now accessed via the Video tab in the bottom navigation */}
 
       {/* Desktop/Popup Grid Layout */}
       <div
@@ -1625,21 +1612,26 @@ const WebcamDisplay: React.FC<WebcamDisplayProps> = ({ className = '', lobby: _l
   // Player colors - same as used in Bumper Balls game
   const PLAYER_COLORS = ['#FF4444', '#4444FF', '#44FF44', '#FFFF44', '#FF44FF', '#44FFFF', '#FF8844', '#8844FF'];
 
-  // Assign colors to players based on their index in the lobby
-  const ballColors = new Map<string, string>();
   const config = useWebcamConfig();
   const configPlayers = config.getPlayers?.() || [];
 
-  // Map colors based on player index - try multiple strategies to ensure matching
-  configPlayers.forEach((player, index) => {
-    const color = PLAYER_COLORS[index % PLAYER_COLORS.length];
-    // Map by player.id (which comes from getPlayers)
-    ballColors.set(player.id, color);
-    console.log(`[WebcamDisplay] Config Player ${index}: ${player.name} (${player.id}) -> ${color}`);
-  });
+  // Memoize ballColors calculation to prevent recalculation on every render
+  const ballColors = useMemo(() => {
+    const colors = new Map<string, string>();
 
-  console.log('[WebcamDisplay] Final ballColors Map keys:', Array.from(ballColors.keys()));
-  console.log('[WebcamDisplay] Final ballColors Map:', Array.from(ballColors.entries()));
+    // Map colors based on player index - try multiple strategies to ensure matching
+    configPlayers.forEach((player, index) => {
+      const color = PLAYER_COLORS[index % PLAYER_COLORS.length];
+      // Map by player.id (which comes from getPlayers)
+      colors.set(player.id, color);
+      console.log(`[WebcamDisplay] Config Player ${index}: ${player.name} (${player.id}) -> ${color}`);
+    });
+
+    console.log('[WebcamDisplay] Final ballColors Map keys:', Array.from(colors.keys()));
+    console.log('[WebcamDisplay] Final ballColors Map:', Array.from(colors.entries()));
+
+    return colors;
+  }, [configPlayers]); // Only recalculate when players change
 
   // Auto-open settings modal when in preparation mode (after camera is accessed)
   useEffect(() => {
@@ -1908,13 +1900,15 @@ const WebcamDisplay: React.FC<WebcamDisplayProps> = ({ className = '', lobby: _l
   // Normal inline display
   return (
     <div className={`webcam-display webcam-auto-expand ${className}`}>
-      <DeviceSettingsModal 
-        isOpen={showDeviceSettings} 
-        onClose={() => setShowDeviceSettings(false)}
-        isPreparationMode={isVideoPrepairing}
-        onConfirmVideoChat={handleConfirmVideoChat}
-        onCancelPreparation={handleCancelPreparation}
-      />
+      {showDeviceSettings && (
+        <DeviceSettingsModal
+          isOpen={showDeviceSettings}
+          onClose={() => setShowDeviceSettings(false)}
+          isPreparationMode={isVideoPrepairing}
+          onConfirmVideoChat={handleConfirmVideoChat}
+          onCancelPreparation={handleCancelPreparation}
+        />
+      )}
       <VideoChatContent onOpenSettings={handleOpenSettings} ballColors={ballColors} />
       <div className="flex justify-center mt-2">
         <button

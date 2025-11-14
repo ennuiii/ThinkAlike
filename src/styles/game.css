@@ -464,7 +464,8 @@
   display: block;
   margin: 0 auto;
   animation: enhancedBounce 1.2s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(92, 244, 255, 0.3)) drop-shadow(0 0 40px rgba(177, 140, 255, 0.15));
+  /* Replaced expensive drop-shadow with cheaper box-shadow */
+  box-shadow: 0 0 20px rgba(92, 244, 255, 0.3), 0 0 40px rgba(177, 140, 255, 0.15);
 }
 
 @keyframes enhancedBounce {
@@ -839,7 +840,8 @@
 }
 
 .heart-filled {
-  filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.5));
+  /* Replaced expensive drop-shadow with cheaper box-shadow */
+  text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
 }
 
 .heart-empty {
@@ -1245,7 +1247,19 @@
 
   .vs-divider {
     font-size: 2rem;
-    transform: rotate(90deg);
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+
+  .result-message {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .lives-lost {
+    font-size: 1.125rem;
+    margin-top: 0.75rem;
   }
 
   .word-display {

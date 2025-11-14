@@ -14,7 +14,7 @@ interface ChatWindowProps {
   mode?: string;
 }
 
-const ChatWindow: React.FC<ChatWindowProps> = ({ socket, messages = [], roomCode: _roomCode, lobby: _lobby, isOpen: externalIsOpen, onClose: _onClose, mode: _mode }) => {
+const ChatWindowComponent: React.FC<ChatWindowProps> = ({ socket, messages = [], roomCode: _roomCode, lobby: _lobby, isOpen: externalIsOpen, onClose: _onClose, mode: _mode }) => {
   const [isOpen, _setIsOpen] = useState(externalIsOpen || false);
   const [message, setMessage] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -169,5 +169,14 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ socket, messages = [], roomCode
     </div>
   );
 };
+
+// Memoize component to prevent unnecessary re-renders when messages haven't changed
+const ChatWindow = React.memo<ChatWindowProps>(ChatWindowComponent, (prevProps, nextProps) => {
+  // Only re-render if messages array reference changes
+  // (messages is the most important prop for determining if content changed)
+  return prevProps.messages === nextProps.messages &&
+         prevProps.socket === nextProps.socket &&
+         prevProps.isOpen === nextProps.isOpen;
+});
 
 export default ChatWindow;
