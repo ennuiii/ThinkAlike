@@ -522,6 +522,7 @@ function AppContent() {
             {lobby && (
               <BottomTabBar
                 activeTab={mobileNav.activeTab}
+                showHistory={lobby.state !== 'LOBBY_WAITING'}
                 onTabChange={(tab) => {
                   mobileNav.setActiveTab(tab);
                   if (tab === 'chat') mobileNav.openDrawer('chat');

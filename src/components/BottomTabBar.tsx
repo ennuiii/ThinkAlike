@@ -15,45 +15,54 @@ interface BottomTabBarProps {
   activeTab: TabType;
   onTabChange: (tab: TabType) => void;
   className?: string;
+  showHistory?: boolean;
 }
 
 export const BottomTabBar = React.memo<BottomTabBarProps>(
-  ({ activeTab, onTabChange, className = '' }) => {
+  ({ activeTab, onTabChange, className = '', showHistory = false }) => {
     // Memoize tab items to prevent recreation on every render
     const tabItems = useMemo<TabItem[]>(
-      () => [
-        {
-          id: 'game',
-          label: 'Game',
-          icon: <Gamepad2 className="w-5 h-5" />,
-        },
-        {
-          id: 'players',
-          label: 'Players',
-          icon: <Users className="w-5 h-5" />,
-        },
-        {
-          id: 'chat',
-          label: 'Chat',
-          icon: <MessageCircle className="w-5 h-5" />,
-        },
-        {
-          id: 'video',
-          label: 'Video',
-          icon: <Video className="w-5 h-5" />,
-        },
-        {
-          id: 'settings',
-          label: 'Settings',
-          icon: <Settings className="w-5 h-5" />,
-        },
-        {
-          id: 'history',
-          label: 'History',
-          icon: <History className="w-5 h-5" />,
-        },
-      ],
-      []
+      () => {
+        const items = [
+          {
+            id: 'game',
+            label: 'Game',
+            icon: <Gamepad2 className="w-5 h-5" />,
+          },
+          {
+            id: 'players',
+            label: 'Players',
+            icon: <Users className="w-5 h-5" />,
+          },
+          {
+            id: 'chat',
+            label: 'Chat',
+            icon: <MessageCircle className="w-5 h-5" />,
+          },
+          {
+            id: 'video',
+            label: 'Video',
+            icon: <Video className="w-5 h-5" />,
+          },
+          {
+            id: 'settings',
+            label: 'Settings',
+            icon: <Settings className="w-5 h-5" />,
+          },
+        ];
+
+        // Only add history tab if showHistory is true
+        if (showHistory) {
+          items.push({
+            id: 'history',
+            label: 'History',
+            icon: <History className="w-5 h-5" />,
+          });
+        }
+
+        return items;
+      },
+      [showHistory]
     );
 
     return (
@@ -81,6 +90,7 @@ export const BottomTabBar = React.memo<BottomTabBarProps>(
     return (
       prevProps.activeTab === nextProps.activeTab &&
       prevProps.className === nextProps.className &&
+      prevProps.showHistory === nextProps.showHistory &&
       prevProps.onTabChange === nextProps.onTabChange
     );
   }
