@@ -128,6 +128,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
                 onChange={handleBackgroundMusicToggle}
                 className="mute-checkbox"
                 aria-label="Enable background music"
+                key={`bgmusic-${backgroundMusicEnabled}`}
               />
               <span className="toggle-label">Enable Background Music</span>
             </label>
@@ -142,6 +143,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
                 onChange={handleSoundEffectsToggle}
                 className="mute-checkbox"
                 aria-label="Enable sound effects"
+                key={`sfx-${soundEffectsEnabled}`}
               />
               <span className="toggle-label">Enable Sound Effects</span>
             </label>

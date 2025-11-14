@@ -254,6 +254,9 @@
   flex-shrink: 0;
   transition: transform var(--transition-fast);
   pointer-events: auto;
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+  opacity: 0.9999;
 }
 
 .mute-checkbox:focus-visible {
