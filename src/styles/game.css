@@ -1226,6 +1226,15 @@
    ============================================================================== */
 
 @media (max-width: 768px) {
+  /* Add bottom padding to game containers to prevent bottom tab bar overlap */
+  .text-mode-input-container,
+  .voice-mode-input-container,
+  .reveal-container,
+  .victory-container,
+  .gameover-container {
+    padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom) + 1.5rem) !important;
+  }
+
   .input-instructions h2 {
     font-size: 2rem;
   }
@@ -1289,6 +1298,15 @@
 }
 
 @media (max-width: 480px) {
+  /* Add bottom padding to game containers to prevent bottom tab bar overlap */
+  .text-mode-input-container,
+  .voice-mode-input-container,
+  .reveal-container,
+  .victory-container,
+  .gameover-container {
+    padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom) + 1.5rem) !important;
+  }
+
   .input-instructions h2 {
     font-size: 1.5rem;
   }

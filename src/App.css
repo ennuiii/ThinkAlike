@@ -1110,7 +1110,8 @@ textarea:focus {
 /* Add bottom padding for mobile navigation */
 @media (max-width: 1023px) {
   .app-root {
-    padding-bottom: 60px;
+    /* Account for bottom tab bar height + safe-area-inset (for notched devices) */
+    padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
   }
 
   /* Hide BottomTabBar on desktop */

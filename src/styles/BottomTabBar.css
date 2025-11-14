@@ -2,6 +2,11 @@
    BOTTOM TAB BAR - Mobile Navigation
    ======================================== */
 
+/* Define bottom tab bar height as CSS variable for consistency */
+:root {
+  --bottom-tab-bar-height: 64px;
+}
+
 .bottom-tab-bar {
   position: fixed;
   bottom: 0;
@@ -27,7 +32,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  height: 64px;
+  height: var(--bottom-tab-bar-height);
 }
 
 .bottom-tab-item {
@@ -143,12 +148,12 @@
 
 /* Responsive tweaks for small phones */
 @media (max-width: 480px) {
-  .bottom-tab-bar {
-    padding: 0;
+  :root {
+    --bottom-tab-bar-height: 60px;
   }
 
-  .bottom-tab-list {
-    height: 60px;
+  .bottom-tab-bar {
+    padding: 0;
   }
 
   .bottom-tab-button {
@@ -176,8 +181,8 @@
 
 /* Medium phones */
 @media (max-width: 600px) and (min-width: 481px) {
-  .bottom-tab-list {
-    height: 62px;
+  :root {
+    --bottom-tab-bar-height: 62px;
   }
 
   .tab-label {
