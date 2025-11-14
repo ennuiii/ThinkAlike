@@ -14,7 +14,6 @@ import { useMobileNavigation } from './hooks/useMobileNavigation';
 import { WebRTCProvider } from './contexts/WebRTCContext';
 import { WebcamConfigProvider } from './config/WebcamConfig';
 import WebcamDisplay from './components/WebcamDisplay';
-import { VideoDrawerContent } from './components/VideoDrawerContent';
 import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
@@ -128,8 +127,7 @@ function AppContent() {
     // Connect to socket
     const socket = socketService.connect();
 
-    // Define all event handlers outside to allow proper cleanup
-    const handleConnect = async () => {
+    socket.on('connect', async () => {
       console.log('[App] Socket connected, setting isConnected = true');
       setIsConnected(true);
 
@@ -177,15 +175,15 @@ function AppContent() {
           }
         }
       }
-    };
+    });
 
-    const handleDisconnect = () => {
+    socket.on('disconnect', () => {
       console.log('[App] Socket disconnected');
       setIsConnected(false);
-    };
+    });
 
     // Listen for lobby events
-    const handleRoomCreated = (data: { room: Lobby; sessionToken?: string }) => {
+    socket.on('room:created', (data: { room: Lobby; sessionToken?: string }) => {
       console.log('[App] Room created:', data.room.code);
       setLobby(data.room);
       setMessages(data.room.messages || []);
@@ -197,9 +195,9 @@ function AppContent() {
         setSessionToken(data.sessionToken);
         sessionStorage.setItem('gameSessionToken', data.sessionToken);
       }
-    };
+    });
 
-    const handleRoomJoined = (data: { room: Lobby; sessionToken?: string }) => {
+    socket.on('room:joined', (data: { room: Lobby; sessionToken?: string }) => {
       console.log('[App] Joined room:', data.room.code);
       setLobby(data.room);
       setMessages(data.room.messages || []);
@@ -211,41 +209,41 @@ function AppContent() {
         setSessionToken(data.sessionToken);
         sessionStorage.setItem('gameSessionToken', data.sessionToken);
       }
-    };
+    });
 
-    const handlePlayerJoined = (data: { players: any[] }) => {
+    socket.on('room:player-joined', (data: { players: any[] }) => {
       console.log('[App] Player joined');
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
         return { ...prevLobby, players: data.players };
       });
-    };
+    });
 
-    const handlePlayerLeft = (data: { players: any[] }) => {
+    socket.on('room:player-left', (data: { players: any[] }) => {
       console.log('[App] Player left');
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
         return { ...prevLobby, players: data.players };
       });
-    };
+    });
 
-    const handlePlayerDisconnected = (data: { playerId: string; playerName: string; players: any[] }) => {
+    socket.on('room:player-disconnected', (data: { playerId: string; playerName: string; players: any[] }) => {
       console.log(`[App] Player ${data.playerName} disconnected`);
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
         return { ...prevLobby, players: data.players };
       });
-    };
+    });
 
-    const handlePlayerReconnected = (data: { playerId: string; playerName: string; players: any[] }) => {
+    socket.on('room:player-reconnected', (data: { playerId: string; playerName: string; players: any[] }) => {
       console.log(`[App] Player ${data.playerName} reconnected`);
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
         return { ...prevLobby, players: data.players };
       });
-    };
+    });
 
-    const handleHostTransferred = (data: { oldHostId: string; newHostId: string; oldHostName: string; newHostName: string; players: any[] }) => {
+    socket.on('room:host-transferred', (data: { oldHostId: string; newHostId: string; oldHostName: string; newHostName: string; players: any[] }) => {
       console.log(`[App] Host transferred from ${data.oldHostName} to ${data.newHostName}`);
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
@@ -255,62 +253,63 @@ function AppContent() {
           players: data.players
         };
       });
-    };
+    });
 
-    const handlePlayerListUpdate = (data: { players: any[] }) => {
+    socket.on('room:player-list-update', (data: { players: any[] }) => {
       console.log('[App] Player list updated with scores');
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
         return { ...prevLobby, players: data.players };
       });
-    };
+    });
 
-    const handleSettingsUpdated = (data: { settings: any }) => {
+    socket.on('room:settings-updated', (data: { settings: any }) => {
       console.log('[App] Settings updated');
       setLobby((prevLobby) => {
         if (!prevLobby) return prevLobby;
         return { ...prevLobby, settings: data.settings };
       });
-    };
+    });
 
-    const handleGameStarted = (data: { lobby?: Lobby; message?: string }) => {
+    socket.on('game:started', (data: { lobby?: Lobby; message?: string }) => {
       console.log('[App] Game started');
       if (data.lobby) {
         setLobby(data.lobby);
       }
-    };
+    });
 
-    const handleGameEnded = (data: { lobby?: Lobby; reason?: string; rounds?: any[] }) => {
+    socket.on('game:ended', (data: { lobby?: Lobby; reason?: string; rounds?: any[] }) => {
       console.log('[App] Game ended:', data.reason);
       if (data.lobby) {
         setLobby(data.lobby);
       }
-    };
+    });
 
-    const handleRoomStateUpdated = (updatedLobby: Lobby) => {
+    // ThinkAlike-specific events
+    socket.on('roomStateUpdated', (updatedLobby: Lobby) => {
       console.log('[App] Room state updated');
       setLobby(updatedLobby);
       if (updatedLobby.messages) {
         setMessages(updatedLobby.messages);
       }
-    };
+    });
 
-    const handleGameVictory = (data: { matchedWord: string; round: number; timeTaken: number }) => {
+    socket.on('game:victory', (data: { matchedWord: string; round: number; timeTaken: number }) => {
       console.log('[App] Victory achieved! Word:', data.matchedWord);
       // State update handled by roomStateUpdated
-    };
+    });
 
-    const handleGameNoMatch = (data: { player1Word: string; player2Word: string; livesRemaining: number }) => {
+    socket.on('game:no-match', (data: { player1Word: string; player2Word: string; livesRemaining: number }) => {
       console.log('[App] No match. Lives:', data.livesRemaining);
       // State update handled by roomStateUpdated
-    };
+    });
 
-    const handleGameRestarted = () => {
+    socket.on('game:restarted', () => {
       console.log('[App] Game restarted');
       // State update handled by roomStateUpdated
-    };
+    });
 
-    const handleTimerUpdate = (data: { timeRemaining: number }) => {
+    socket.on('timer:update', (data: { timeRemaining: number }) => {
       // Update timer in real-time
       setLobby((prevLobby) => {
         if (!prevLobby || !prevLobby.gameData) return prevLobby;
@@ -322,72 +321,28 @@ function AppContent() {
           }
         };
       });
-    };
+    });
 
-    const handleChatMessage = (message: ChatMessage) => {
+    // Chat events
+    socket.on('chat:message', (message: ChatMessage) => {
       console.log('[App] Chat message received:', message);
       setMessages(prev => [...prev, message].slice(-100)); // Keep last 100
-    };
+    });
 
-    const handleError = (data: { message: string }) => {
+    // Error handling
+    socket.on('error', (data: { message: string }) => {
       console.error('[App] Error from server:', data.message);
       setError(data.message);
-    };
+    });
 
-    const handlePlayerKicked = (data: { message: string }) => {
+    socket.on('player:kicked', (data: { message: string }) => {
       console.log('[App] Kicked from room:', data.message);
       alert(data.message);
       setLobby(null);
       setError('');
-    };
+    });
 
-    // Register all event handlers
-    socket.on('connect', handleConnect);
-    socket.on('disconnect', handleDisconnect);
-    socket.on('room:created', handleRoomCreated);
-    socket.on('room:joined', handleRoomJoined);
-    socket.on('room:player-joined', handlePlayerJoined);
-    socket.on('room:player-left', handlePlayerLeft);
-    socket.on('room:player-disconnected', handlePlayerDisconnected);
-    socket.on('room:player-reconnected', handlePlayerReconnected);
-    socket.on('room:host-transferred', handleHostTransferred);
-    socket.on('room:player-list-update', handlePlayerListUpdate);
-    socket.on('room:settings-updated', handleSettingsUpdated);
-    socket.on('game:started', handleGameStarted);
-    socket.on('game:ended', handleGameEnded);
-    socket.on('roomStateUpdated', handleRoomStateUpdated);
-    socket.on('game:victory', handleGameVictory);
-    socket.on('game:no-match', handleGameNoMatch);
-    socket.on('game:restarted', handleGameRestarted);
-    socket.on('timer:update', handleTimerUpdate);
-    socket.on('chat:message', handleChatMessage);
-    socket.on('error', handleError);
-    socket.on('player:kicked', handlePlayerKicked);
-
-    // Cleanup function to properly remove all listeners
     return () => {
-      socket.off('connect', handleConnect);
-      socket.off('disconnect', handleDisconnect);
-      socket.off('room:created', handleRoomCreated);
-      socket.off('room:joined', handleRoomJoined);
-      socket.off('room:player-joined', handlePlayerJoined);
-      socket.off('room:player-left', handlePlayerLeft);
-      socket.off('room:player-disconnected', handlePlayerDisconnected);
-      socket.off('room:player-reconnected', handlePlayerReconnected);
-      socket.off('room:host-transferred', handleHostTransferred);
-      socket.off('room:player-list-update', handlePlayerListUpdate);
-      socket.off('room:settings-updated', handleSettingsUpdated);
-      socket.off('game:started', handleGameStarted);
-      socket.off('game:ended', handleGameEnded);
-      socket.off('roomStateUpdated', handleRoomStateUpdated);
-      socket.off('game:victory', handleGameVictory);
-      socket.off('game:no-match', handleGameNoMatch);
-      socket.off('game:restarted', handleGameRestarted);
-      socket.off('timer:update', handleTimerUpdate);
-      socket.off('chat:message', handleChatMessage);
-      socket.off('error', handleError);
-      socket.off('player:kicked', handlePlayerKicked);
-
       socketService.disconnect();
     };
   }, [handleCreateRoom, handleJoinRoom, attemptReconnection]);
@@ -499,9 +454,9 @@ function AppContent() {
           <WebcamConfigProvider config={webcamConfig}>
             <WebRTCProvider>
             <div className="app-layout">
-              {/* Webcam Bar - Hidden on Mobile, Visible on Desktop */}
+              {/* Webcam Bar - Full Width */}
               <div
-                className="hidden lg:block p-3"
+                className="p-3"
                 style={{
                   background: 'var(--panel-bg)',
                   borderBottom: '1px solid var(--panel-border)',
@@ -557,50 +512,25 @@ function AppContent() {
                 activeTab={mobileNav.activeTab}
                 onTabChange={(tab) => {
                   mobileNav.setActiveTab(tab);
-                  if (tab === 'players') mobileNav.openDrawer('players');
                   if (tab === 'chat') mobileNav.openDrawer('chat');
+                  if (tab === 'players') mobileNav.openDrawer('players');
                   if (tab === 'video') mobileNav.openDrawer('video');
                 }}
               />
             )}
 
-            {/* Mobile Drawer - Players, Chat, & Video (only mount when open) */}
+            {/* Mobile Drawer - Dynamic Content */}
             {lobby && mobileNav.isDrawerOpen && (
               <MobileDrawer
-                isOpen={true}
+                isOpen={mobileNav.isDrawerOpen}
                 onClose={mobileNav.closeDrawer}
                 position="bottom"
                 title={
-                  mobileNav.drawerContent === 'players'
-                    ? 'Players'
-                    : mobileNav.drawerContent === 'chat'
-                    ? 'Chat'
-                    : mobileNav.drawerContent === 'video'
-                    ? 'Video Feeds'
-                    : 'Menu'
+                  mobileNav.drawerContent === 'chat' ? 'Chat' :
+                  mobileNav.drawerContent === 'players' ? 'Players' :
+                  mobileNav.drawerContent === 'video' ? 'Video' : ''
                 }
               >
-                {/* Players Drawer - Only render when active */}
-                {mobileNav.drawerContent === 'players' && (
-                  <div className="p-4 flex flex-col gap-6 max-h-96 overflow-y-auto">
-                    {/* Player List */}
-                    <div>
-                      <PlayerList
-                        players={lobby.players}
-                        hostId={lobby.hostId}
-                        mySocketId={lobby.mySocketId}
-                        roomCode={lobby.code}
-                        socket={socket!}
-                      />
-                    </div>
-                    {/* Audio Settings Section */}
-                    <div className="border-t border-slate-600 pt-4">
-                      <h3 className="text-lg font-semibold text-slate-200 mb-3">Audio Settings</h3>
-                      <p className="text-slate-400 text-sm mb-3">Manage your audio preferences</p>
-                    </div>
-                  </div>
-                )}
-                {/* Chat Drawer - Only render when active */}
                 {mobileNav.drawerContent === 'chat' && (
                   <ChatWindow
                     messages={messages}
@@ -608,9 +538,19 @@ function AppContent() {
                     roomCode={lobby.code}
                   />
                 )}
-                {/* Video Drawer - Mobile-optimized grid layout */}
+                {mobileNav.drawerContent === 'players' && (
+                  <PlayerList
+                    players={lobby.players}
+                    hostId={lobby.hostId}
+                    mySocketId={lobby.mySocketId}
+                    roomCode={lobby.code}
+                    socket={socket!}
+                  />
+                )}
                 {mobileNav.drawerContent === 'video' && (
-                  <VideoDrawerContent players={lobby.players} />
+                  <div className="p-4">
+                    <p className="text-slate-400">Video content here</p>
+                  </div>
                 )}
               </MobileDrawer>
             )}

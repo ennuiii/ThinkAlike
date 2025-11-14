@@ -28,7 +28,7 @@ const WaveBackground: React.FC<WaveBackgroundProps> = React.memo(({ isAnimating 
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid slice"
         style={{
-          filter: 'blur(40px)',
+          filter: isAnimating ? 'blur(40px)' : 'none',
           opacity: 0.3,
         }}
       >
