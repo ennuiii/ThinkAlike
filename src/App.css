@@ -131,7 +131,7 @@ body {
     linear-gradient(135deg, #020510 0%, #050c1c 35%, #0b1636 70%, #020510 100%);
   filter: blur(0px);
   animation: float 24s ease-in-out infinite;
-  z-index: -2;
+  z-index: var(--z-background);
 }
 
 /* Grid & aurora overlay - Aurora */
@@ -145,7 +145,7 @@ body {
   background-size: 60px 60px;
   mix-blend-mode: screen;
   pointer-events: none;
-  z-index: -1;
+  z-index: var(--z-background-grid);
 }
 
 /* Paper texture - Thought Bubble */
@@ -160,7 +160,7 @@ body {
   background-size: 200px 200px;
   opacity: 0.5;
   pointer-events: none;
-  z-index: -1;
+  z-index: var(--z-background-grid);
 }
 
 [data-theme="thought-bubble"] body::after {
@@ -175,7 +175,7 @@ body {
     linear-gradient(90deg, rgba(138, 198, 209, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
-  z-index: -1;
+  z-index: var(--z-background-grid);
 }
 
 @keyframes float {
@@ -384,7 +384,7 @@ body {
   text-align: center;
   margin-bottom: 1.5rem;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .eyebrow {
@@ -419,7 +419,7 @@ body {
   justify-content: center;
   margin-bottom: 2rem;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .home-feature-list li {
@@ -448,7 +448,7 @@ body {
   justify-content: center;
   margin-bottom: 2.5rem;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .home-metric {
@@ -486,7 +486,7 @@ body {
   margin: 0 auto 2rem;
   max-width: 420px;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .mode-toggle {
@@ -517,7 +517,7 @@ body {
   color: var(--text-secondary);
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .streamer-banner strong {
@@ -543,7 +543,7 @@ body {
 
 .home-form {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .home-status-grid {
@@ -792,7 +792,7 @@ textarea:focus {
 
 .round-info > * {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 /* ========================================

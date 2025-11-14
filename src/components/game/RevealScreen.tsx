@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Trophy, XCircle, Heart } from 'lucide-react';
 import type { Lobby } from '../../types';
 import { Confetti } from '../animations/Confetti';
 import { HeartBreak } from '../animations/HeartBreak';
@@ -46,8 +47,19 @@ export const RevealScreen: React.FC<RevealScreenProps> = ({ lobby, onNextRound }
       {/* Main reveal area */}
       <div className={`reveal-content ${showAnimation ? 'reveal-animate' : ''}`}>
         {/* Title */}
-        <h1 className={`reveal-title ${isMatch ? 'match' : 'no-match'} text-2xl sm:text-3xl md:text-4xl lg:text-5xl`}>
-          {isMatch ? '🎉 MIND MELD! 🎉' : '❌ Not Quite...'}
+        <h1 className={`reveal-title ${isMatch ? 'match' : 'no-match'} text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex items-center justify-center gap-2`}>
+          {isMatch ? (
+            <>
+              <Trophy className="w-8 h-8 sm:w-10 sm:h-10" />
+              <span>MIND MELD!</span>
+              <Trophy className="w-8 h-8 sm:w-10 sm:h-10" />
+            </>
+          ) : (
+            <>
+              <XCircle className="w-8 h-8 sm:w-10 sm:h-10" />
+              <span>Not Quite...</span>
+            </>
+          )}
         </h1>
 
         {/* Word comparison */}
@@ -83,8 +95,8 @@ export const RevealScreen: React.FC<RevealScreenProps> = ({ lobby, onNextRound }
           ) : (
             <>
               <p>Not a match. You lost a life!</p>
-              <div className="lives-lost">
-                Lives remaining: ❤️ × {lobby.gameData?.livesRemaining || 0}
+              <div className="lives-lost flex items-center justify-center gap-1">
+                Lives remaining: <Heart className="w-5 h-5 fill-current" /> × {lobby.gameData?.livesRemaining || 0}
               </div>
             </>
           )}

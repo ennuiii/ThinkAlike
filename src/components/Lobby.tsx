@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Video, Lock, AlertTriangle, Rocket } from 'lucide-react';
 import type { Lobby as LobbyType, Player, Settings } from '../types';
 import type { Socket } from 'socket.io-client';
 import type { GameBuddiesSession } from '../services/gameBuddiesSession';
@@ -109,7 +110,14 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
         style={{ borderRadius: cardRadius }}
       >
         <h3 className="text-xl font-semibold text-emerald-300 mb-4">
-          {hideRoomCode ? '🎥 Streamer Mode' : 'Room Code'}
+          {hideRoomCode ? (
+            <span className="flex items-center gap-2">
+              <Video className="w-4 h-4" />
+              Streamer Mode
+            </span>
+          ) : (
+            'Room Code'
+          )}
         </h3>
 
         {!hideRoomCode ? (
@@ -150,7 +158,10 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
 
         {hideRoomCode && (
           <p className="text-slate-500 text-sm text-center mt-3">
-            🔒 Link doesn't reveal room code - safe for streaming!
+            <span className="flex items-center gap-2">
+              <Lock className="w-4 h-4" />
+              Link doesn't reveal room code - safe for streaming!
+            </span>
           </p>
         )}
       </div>
@@ -242,10 +253,25 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
           }`}
         >
           {!hasExactlyTwoPlayers
-            ? '⚠️ Need 2 Players'
+            ? (
+              <span className="flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4" />
+                Need 2 Players
+              </span>
+            )
             : !allPlayersReady
-            ? '⏳ Waiting for Ready...'
-            : '🚀 Start Game!'}
+            ? (
+              <span className="flex items-center gap-2">
+                ⏳
+                <span>Waiting for Ready...</span>
+              </span>
+            )
+            : (
+              <span className="flex items-center gap-2">
+                <Rocket className="w-4 h-4" />
+                Start Game!
+              </span>
+            )}
         </button>
       )}
 

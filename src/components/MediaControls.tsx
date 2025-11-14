@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Mic, MicOff, Volume2, VolumeX, Settings, User, Video, VideoOff } from 'lucide-react';
+import { Mic, MicOff, Volume2, VolumeX, Settings, User, Video, VideoOff, Crown } from 'lucide-react';
 import { useWebcamConfig } from '../config/WebcamConfig';
 
 interface MediaControlsProps {
@@ -244,7 +244,16 @@ const MediaControls: React.FC<MediaControlsProps> = ({
         <div className="bg-slate-800/50 border border-slate-600/50 rounded-xl p-3">
           <div className="flex items-center space-x-2 text-slate-300">
             <User className="w-4 h-4" />
-            <span>{isGamemaster ? '👑 Gamemaster' : playerName}</span>
+            <span className="flex items-center gap-1">
+              {isGamemaster ? (
+                <>
+                  <Crown className="w-4 h-4" />
+                  Gamemaster
+                </>
+              ) : (
+                playerName
+              )}
+            </span>
             {isMicOn && (
               <div className="flex items-center space-x-1 text-green-400">
                 <Mic className="w-3 h-3" />

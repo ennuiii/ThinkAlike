@@ -3,19 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Constants - Import first */
+@import './styles/z-index-constants.css';
+@import './styles/spacing-constants.css';
+
 /* Theme system is now defined in App.css */
 /* This file contains Tailwind utilities and component styles only */
 
 @layer base {
   html {
     @apply h-full;
+    /* Dynamic viewport height for iOS Safari address bar */
+    height: var(--viewport-height);
+    height: 100dvh;
   }
 
   body {
     @apply h-full font-sans;
     font-family: var(--font-body);
     background: transparent;
-    min-height: 100vh;
+    min-height: 100dvh;
     color: var(--text-primary);
   }
 
@@ -85,6 +92,16 @@
   /* Ensure textarea elements are styled properly */
   textarea {
     @apply bg-slate-700 text-slate-100;
+  }
+
+  /* iOS Safari: Prevent zoom on input focus (16px minimum) */
+  @supports (-webkit-touch-callout: none) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      font-size: 16px !important;
+    }
   }
 
   /* Fix any remaining white text on white background issues */
