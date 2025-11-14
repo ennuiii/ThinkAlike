@@ -1128,10 +1128,20 @@ textarea:focus {
 }
 
 /* Ensure main layout accounts for mobile nav */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .app-layout {
+    /* On mobile, allow content to scroll naturally instead of forcing 100vh */
+    min-height: auto;
+    height: auto;
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+
+  /* Ensure main content area scrolls properly on mobile */
+  .app-layout > div:nth-child(2) {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Remove right sidebar on mobile - it's in drawer instead */
