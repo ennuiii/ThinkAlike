@@ -19,6 +19,7 @@ import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import SettingsButton from './components/SettingsButton';
+import { SettingsModal } from './components/SettingsModal';
 import { backgroundMusic } from './utils/backgroundMusic';
 import { soundEffects } from './utils/soundEffects';
 // Background components removed for performance - using simple CSS gradients instead
@@ -525,6 +526,7 @@ function AppContent() {
                   if (tab === 'chat') mobileNav.openDrawer('chat');
                   if (tab === 'players') mobileNav.openDrawer('players');
                   if (tab === 'video') mobileNav.openDrawer('video');
+                  if (tab === 'settings') mobileNav.openDrawer('settings');
                 }}
               />
             )}
@@ -538,7 +540,8 @@ function AppContent() {
                 title={
                   mobileNav.drawerContent === 'chat' ? 'Chat' :
                   mobileNav.drawerContent === 'players' ? 'Players' :
-                  mobileNav.drawerContent === 'video' ? 'Video' : ''
+                  mobileNav.drawerContent === 'video' ? 'Video' :
+                  mobileNav.drawerContent === 'settings' ? 'Settings' : ''
                 }
               >
                 {mobileNav.drawerContent === 'chat' && (
@@ -559,6 +562,11 @@ function AppContent() {
                 )}
                 {mobileNav.drawerContent === 'video' && (
                   <VideoDrawerContent players={lobby.players} />
+                )}
+                {mobileNav.drawerContent === 'settings' && (
+                  <div className="p-4">
+                    <SettingsModal onClose={mobileNav.closeDrawer} />
+                  </div>
                 )}
               </MobileDrawer>
             )}
