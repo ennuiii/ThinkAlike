@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Camera, CameraOff, Video, VideoOff, ExternalLink, Volume2, VolumeX, Eye, EyeOff, Mic, MicOff, Settings, Sparkles } from 'lucide-react';
 import { useWebRTC } from '../contexts/WebRTCContext';
 import { useWebcamConfig } from '../config/WebcamConfig';
+import { WebcamCarousel } from './WebcamCarousel';
 import ReactDOM from 'react-dom';
 import { DEFAULT_BACKGROUNDS } from '../services/virtualBackgroundService';
 import type { AudioProcessorConfig } from '../services/audioProcessor';
@@ -1506,18 +1507,34 @@ const VideoChatContent: React.FC<{
           </div>
         </div>
       )}
-      <div 
+      {/* Mobile Carousel Layout */}
+      {isMobile && !isPopout && (
+        <WebcamCarousel
+          feeds={videoFeeds.map((feed) => ({
+            playerId: feed.id,
+            stream: feed.stream,
+            playerName: feed.playerName,
+            isActive: feed.isActive,
+            isMyVideo: feed.isSelf,
+            hasCamera: feed.stream !== null,
+          }))}
+          isPreparationMode={isVideoPrepairing}
+        />
+      )}
+
+      {/* Desktop/Popup Grid Layout */}
+      <div
         className={
           isPopout ? (
             // Use custom popup classes with full height
             `webcam-popup-grid ${
-              videoFeeds.length === 1 ? 'cols-1' : 
-              videoFeeds.length === 2 ? 'cols-2' : 
+              videoFeeds.length === 1 ? 'cols-1' :
+              videoFeeds.length === 2 ? 'cols-2' :
               'cols-3'
             }`
           ) : isMobile ? (
-            // Mobile grid: more compact
-            `webcam-mobile-grid flex-1 ${
+            // Mobile grid: hidden (carousel above)
+            `webcam-mobile-grid flex-1 hidden ${
               videoFeeds.length === 1 ? 'single' : ''
             }`
           ) : (
