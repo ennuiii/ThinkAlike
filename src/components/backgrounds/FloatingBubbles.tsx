@@ -4,9 +4,9 @@ interface FloatingBubblesProps {
   isAnimating?: boolean;
 }
 
-const FloatingBubbles: React.FC<FloatingBubblesProps> = React.memo(({ isAnimating = true }) => {
-  // Generate floating bubble elements
-  const bubbles = Array.from({ length: 15 }, (_, i) => ({
+const FloatingBubbles: React.FC<FloatingBubblesProps> = React.memo(({ isAnimating = false }) => {
+  // Generate floating bubble elements - reduced from 15 to 5 for performance
+  const bubbles = Array.from({ length: 5 }, (_, i) => ({
     id: i,
     left: Math.random() * 100,
     top: Math.random() * 100,

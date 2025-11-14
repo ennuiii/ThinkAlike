@@ -4,7 +4,7 @@ interface WaveBackgroundProps {
   isAnimating?: boolean;
 }
 
-const WaveBackground: React.FC<WaveBackgroundProps> = React.memo(({ isAnimating = true }) => {
+const WaveBackground: React.FC<WaveBackgroundProps> = React.memo(({ isAnimating = false }) => {
   return (
     <div
       style={{

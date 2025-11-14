@@ -20,8 +20,7 @@ import ThemeToggle from './components/ThemeToggle';
 import SettingsButton from './components/SettingsButton';
 import { backgroundMusic } from './utils/backgroundMusic';
 import { soundEffects } from './utils/soundEffects';
-import WaveBackground from './components/backgrounds/WaveBackground';
-import FloatingBubbles from './components/backgrounds/FloatingBubbles';
+// Background components removed for performance - using simple CSS gradients instead
 import './App.css';
 import './styles/responsive.css';
 import './styles/mobile.css';
@@ -442,12 +441,25 @@ function AppContent() {
   const socket = socketService.getSocket();
   const webcamConfig = socket && lobby ? createGameAdapter(socket, lobby.code, lobby) : null;
 
-  // Determine if backgrounds should animate (only in lobby/menu, not during gameplay)
-  const shouldAnimateBackground = !lobby || lobby.state === 'LOBBY_WAITING' || lobby.state === 'VICTORY' || lobby.state === 'GAME_OVER';
+  // Disable all background animations for performance
+  const shouldAnimateBackground = false;
 
   return (
     <div className="app-root">
-      {theme === 'neural-sync' ? <WaveBackground isAnimating={shouldAnimateBackground} /> : <FloatingBubbles isAnimating={shouldAnimateBackground} />}
+      {/* Simplified static background for better performance */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+          background: theme === 'neural-sync'
+            ? 'linear-gradient(180deg, #2A1F1F 0%, #3D2F2F 100%)'
+            : 'linear-gradient(135deg, #FAF3E0 0%, #FFF8E7 50%, #FFF4E6 100%)',
+        }}
+      />
       <ThemeToggle />
       <SettingsButton />
         {webcamConfig ? (
