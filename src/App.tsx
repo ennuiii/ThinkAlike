@@ -480,7 +480,7 @@ function AppContent() {
               <div className="flex flex-col lg:flex-row flex-1 min-h-0">
 
                 {/* Main Content - Takes Remaining Space */}
-                <div className="flex-1 overflow-y-auto p-4 lg:p-6">
+                <div className="flex-1 overflow-y-auto p-4 lg:p-6 pb-20 lg:pb-6">
                   {error && (
                     <div className="error-message bg-red-500/20 border border-red-500 text-red-200 p-4 rounded-lg" style={{ margin: '20px auto', maxWidth: '600px' }}>
                       {error}
