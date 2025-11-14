@@ -502,45 +502,45 @@ function AppContent() {
 
               </div>
             </div>
-          </WebRTCProvider>
-        </WebcamConfigProvider>
 
-        {/* Mobile Navigation Bar - Bottom Tab Bar */}
-        {lobby && (
-          <BottomTabBar
-            activeTab={mobileNav.activeTab}
-            onTabChange={(tab) => {
-              mobileNav.setActiveTab(tab);
-              if (tab === 'chat') mobileNav.openDrawer('chat');
-              if (tab === 'settings') mobileNav.openDrawer('settings');
-            }}
-            chatBadge={mobileNav.chatBadge}
-          />
-        )}
-
-        {/* Mobile Drawer - Chat & Settings */}
-        {lobby && (
-          <MobileDrawer
-            isOpen={mobileNav.isDrawerOpen}
-            onClose={mobileNav.closeDrawer}
-            position="bottom"
-            title={mobileNav.drawerContent === 'chat' ? 'Chat' : 'Settings'}
-          >
-            {mobileNav.drawerContent === 'chat' && (
-              <ChatWindow
-                messages={messages}
-                socket={socket!}
-                roomCode={lobby.code}
+            {/* Mobile Navigation Bar - Bottom Tab Bar */}
+            {lobby && (
+              <BottomTabBar
+                activeTab={mobileNav.activeTab}
+                onTabChange={(tab) => {
+                  mobileNav.setActiveTab(tab);
+                  if (tab === 'chat') mobileNav.openDrawer('chat');
+                  if (tab === 'settings') mobileNav.openDrawer('settings');
+                }}
+                chatBadge={mobileNav.chatBadge}
               />
             )}
-            {mobileNav.drawerContent === 'settings' && (
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-slate-200 mb-4">Audio Settings</h3>
-                <p className="text-slate-400 text-sm">Settings panel coming soon</p>
-              </div>
+
+            {/* Mobile Drawer - Chat & Settings */}
+            {lobby && (
+              <MobileDrawer
+                isOpen={mobileNav.isDrawerOpen}
+                onClose={mobileNav.closeDrawer}
+                position="bottom"
+                title={mobileNav.drawerContent === 'chat' ? 'Chat' : 'Settings'}
+              >
+                {mobileNav.drawerContent === 'chat' && (
+                  <ChatWindow
+                    messages={messages}
+                    socket={socket!}
+                    roomCode={lobby.code}
+                  />
+                )}
+                {mobileNav.drawerContent === 'settings' && (
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-slate-200 mb-4">Audio Settings</h3>
+                    <p className="text-slate-400 text-sm">Settings panel coming soon</p>
+                  </div>
+                )}
+              </MobileDrawer>
             )}
-          </MobileDrawer>
-        )}
+          </WebRTCProvider>
+        </WebcamConfigProvider>
       ) : (
         <div className="min-h-screen flex flex-col">
           {error && (

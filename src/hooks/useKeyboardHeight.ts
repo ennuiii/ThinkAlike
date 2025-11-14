@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface KeyboardHeightState {
   keyboardHeight: number;
@@ -29,7 +29,7 @@ export const useKeyboardHeight = (): KeyboardHeightState => {
   const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const initialHeightRef = useRef(window.innerHeight);
-  const keyboardTimeoutRef = useRef<NodeJS.Timeout>();
+  const keyboardTimeoutRef = useRef<number | undefined>(undefined);
 
   // Detect keyboard visibility by checking viewport height changes
   useEffect(() => {
@@ -58,7 +58,9 @@ export const useKeyboardHeight = (): KeyboardHeightState => {
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', handleResize);
       return () => {
-        window.visualViewport?.removeEventListener('resize', handleResize);
+        if (window.visualViewport) {
+          window.visualViewport.removeEventListener('resize', handleResize);
+        }
         if (keyboardTimeoutRef.current) {
           clearTimeout(keyboardTimeoutRef.current);
         }

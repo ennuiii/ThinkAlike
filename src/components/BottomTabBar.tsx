@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MessageCircle, Settings, Gamepad2 } from 'lucide-react';
 import '../styles/BottomTabBar.css';
 
