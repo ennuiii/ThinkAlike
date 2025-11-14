@@ -572,7 +572,7 @@ function AppContent() {
                     <SettingsModal onClose={mobileNav.closeDrawer} />
                   </div>
                 )}
-                {mobileNav.drawerContent === 'history' && (
+                {mobileNav.drawerContent === 'history' && lobby.gameData && (
                   <WordHistory rounds={lobby.gameData.rounds} />
                 )}
               </MobileDrawer>

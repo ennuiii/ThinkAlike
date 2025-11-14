@@ -23,29 +23,29 @@ export const BottomTabBar = React.memo<BottomTabBarProps>(
     // Memoize tab items to prevent recreation on every render
     const tabItems = useMemo<TabItem[]>(
       () => {
-        const items = [
+        const items: TabItem[] = [
           {
-            id: 'game',
+            id: 'game' as const,
             label: 'Game',
             icon: <Gamepad2 className="w-5 h-5" />,
           },
           {
-            id: 'players',
+            id: 'players' as const,
             label: 'Players',
             icon: <Users className="w-5 h-5" />,
           },
           {
-            id: 'chat',
+            id: 'chat' as const,
             label: 'Chat',
             icon: <MessageCircle className="w-5 h-5" />,
           },
           {
-            id: 'video',
+            id: 'video' as const,
             label: 'Video',
             icon: <Video className="w-5 h-5" />,
           },
           {
-            id: 'settings',
+            id: 'settings' as const,
             label: 'Settings',
             icon: <Settings className="w-5 h-5" />,
           },
@@ -54,7 +54,7 @@ export const BottomTabBar = React.memo<BottomTabBarProps>(
         // Only add history tab if showHistory is true
         if (showHistory) {
           items.push({
-            id: 'history',
+            id: 'history' as const,
             label: 'History',
             icon: <History className="w-5 h-5" />,
           });
