@@ -121,19 +121,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
 
           {/* Background Music Toggle */}
           <div className="settings-section">
-            <label
-              className="settings-toggle"
-              onClick={(e) => {
-                // Only handle clicks on the label or span, not on the checkbox itself
-                if (e.target !== e.currentTarget.querySelector('input')) {
-                  handleBackgroundMusicToggle();
-                }
-              }}
-            >
+            <label className="settings-toggle">
               <input
                 type="checkbox"
                 checked={backgroundMusicEnabled}
-                onClick={handleBackgroundMusicToggle}
+                onChange={handleBackgroundMusicToggle}
                 className="mute-checkbox"
                 aria-label="Enable background music"
               />
@@ -143,19 +135,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
 
           {/* Sound Effects Toggle */}
           <div className="settings-section">
-            <label
-              className="settings-toggle"
-              onClick={(e) => {
-                // Only handle clicks on the label or span, not on the checkbox itself
-                if (e.target !== e.currentTarget.querySelector('input')) {
-                  handleSoundEffectsToggle();
-                }
-              }}
-            >
+            <label className="settings-toggle">
               <input
                 type="checkbox"
                 checked={soundEffectsEnabled}
-                onClick={handleSoundEffectsToggle}
+                onChange={handleSoundEffectsToggle}
                 className="mute-checkbox"
                 aria-label="Enable sound effects"
               />
