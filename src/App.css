@@ -1102,3 +1102,39 @@ textarea:focus {
 [data-theme] body {
   font-family: var(--font-body) !important;
 }
+
+/* ========================================
+   MOBILE LAYOUT - Bottom Tab Navigation
+   ======================================== */
+
+/* Add bottom padding for mobile navigation */
+@media (max-width: 1023px) {
+  .app-root {
+    padding-bottom: 60px;
+  }
+
+  /* Hide BottomTabBar on desktop */
+  .bottom-tab-bar {
+    display: none;
+  }
+}
+
+/* Show BottomTabBar only on mobile/tablet */
+@media (max-width: 1023px) {
+  .bottom-tab-bar {
+    display: flex;
+  }
+}
+
+/* Ensure main layout accounts for mobile nav */
+@media (max-width: 768px) {
+  .app-layout {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Remove right sidebar on mobile - it's in drawer instead */
+  .right-sidebar {
+    display: none !important;
+  }
+}
