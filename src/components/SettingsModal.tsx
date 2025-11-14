@@ -58,7 +58,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
   };
 
   // Handle background music toggle
-  const handleBackgroundMusicToggle = () => {
+  const handleBackgroundMusicToggle = (e: React.MouseEvent | React.ChangeEvent) => {
+    e.preventDefault();
     const newEnabled = !backgroundMusicEnabled;
     setBackgroundMusicEnabled(newEnabled);
     backgroundMusic.setEnabled(newEnabled);
@@ -66,7 +67,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
   };
 
   // Handle sound effects toggle
-  const handleSoundEffectsToggle = () => {
+  const handleSoundEffectsToggle = (e: React.MouseEvent | React.ChangeEvent) => {
+    e.preventDefault();
     const newEnabled = !soundEffectsEnabled;
     setSoundEffectsEnabled(newEnabled);
     soundEffects.setEnabled(newEnabled);
@@ -125,7 +127,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
               <input
                 type="checkbox"
                 checked={backgroundMusicEnabled}
-                onChange={handleBackgroundMusicToggle}
+                onClick={handleBackgroundMusicToggle}
                 className="mute-checkbox"
                 aria-label="Enable background music"
               />
@@ -139,7 +141,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
               <input
                 type="checkbox"
                 checked={soundEffectsEnabled}
-                onChange={handleSoundEffectsToggle}
+                onClick={handleSoundEffectsToggle}
                 className="mute-checkbox"
                 aria-label="Enable sound effects"
               />
