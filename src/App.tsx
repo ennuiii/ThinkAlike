@@ -441,9 +441,6 @@ function AppContent() {
   const socket = socketService.getSocket();
   const webcamConfig = socket && lobby ? createGameAdapter(socket, lobby.code, lobby) : null;
 
-  // Disable all background animations for performance
-  const shouldAnimateBackground = false;
-
   return (
     <div className="app-root">
       {/* Simplified static background for better performance */}
