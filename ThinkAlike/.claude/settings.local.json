@@ -21,7 +21,9 @@
       "WebFetch(domain:www.anthropic.com)",
       "WebFetch(domain:github.com)",
       "Bash(tree:*)",
-      "Bash(move SKILL.md .claudeskillsgamebuddies-game-generatorSKILL.md)"
+      "Bash(move SKILL.md .claudeskillsgamebuddies-game-generatorSKILL.md)",
+      "Bash(npm install:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
