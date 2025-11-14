@@ -12,23 +12,13 @@ export default defineConfig({
     port: 5173,
     host: true,
   },
+  esbuild: {
+    drop: ['console', 'debugger'],
+  },
   build: {
     // Remove console logs and debugger statements in production
     minify: 'esbuild',
-    esbuild: {
-      drop: ['console', 'debugger'],
-    },
     // Optimize chunk size
     chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        // Manual chunk splitting for better caching
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'webrtc': ['simple-peer'],
-          'ui-vendor': ['lucide-react'],
-        },
-      },
-    },
   },
 })

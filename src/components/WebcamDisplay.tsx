@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { Camera, CameraOff, Video, VideoOff, ExternalLink, Volume2, VolumeX, Eye, EyeOff, Mic, MicOff, Settings, Sparkles } from 'lucide-react';
 import { useWebRTC } from '../contexts/WebRTCContext';
 import { useWebcamConfig } from '../config/WebcamConfig';
