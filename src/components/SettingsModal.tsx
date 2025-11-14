@@ -125,7 +125,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
               <input
                 type="checkbox"
                 checked={backgroundMusicEnabled}
-                onChange={handleBackgroundMusicToggle}
+                onClick={handleBackgroundMusicToggle}
                 className="mute-checkbox"
                 aria-label="Enable background music"
               />
@@ -139,7 +139,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
               <input
                 type="checkbox"
                 checked={soundEffectsEnabled}
-                onChange={handleSoundEffectsToggle}
+                onClick={handleSoundEffectsToggle}
                 className="mute-checkbox"
                 aria-label="Enable sound effects"
               />
