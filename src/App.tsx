@@ -14,6 +14,7 @@ import { useMobileNavigation } from './hooks/useMobileNavigation';
 import { WebRTCProvider } from './contexts/WebRTCContext';
 import { WebcamConfigProvider } from './config/WebcamConfig';
 import WebcamDisplay from './components/WebcamDisplay';
+import { VideoDrawerContent } from './components/VideoDrawerContent';
 import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
@@ -463,9 +464,9 @@ function AppContent() {
           <WebcamConfigProvider config={webcamConfig}>
             <WebRTCProvider>
             <div className="app-layout">
-              {/* Webcam Bar - Full Width */}
+              {/* Webcam Bar - Desktop Only */}
               <div
-                className="p-3"
+                className="hidden lg:block p-3"
                 style={{
                   background: 'var(--panel-bg)',
                   borderBottom: '1px solid var(--panel-border)',
@@ -557,9 +558,7 @@ function AppContent() {
                   />
                 )}
                 {mobileNav.drawerContent === 'video' && (
-                  <div className="p-4">
-                    <p className="text-slate-400">Video content here</p>
-                  </div>
+                  <VideoDrawerContent players={lobby.players} />
                 )}
               </MobileDrawer>
             )}
