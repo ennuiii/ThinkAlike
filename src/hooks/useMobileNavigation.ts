@@ -4,13 +4,13 @@ import type { TabType } from '../components/BottomTabBar';
 interface MobileNavigationState {
   activeTab: TabType;
   isDrawerOpen: boolean;
-  drawerContent: 'players' | 'chat' | 'video' | 'settings' | null;
+  drawerContent: 'players' | 'chat' | 'video' | 'settings' | 'history' | null;
   chatBadge: number;
 }
 
 interface MobileNavigationActions {
   setActiveTab: (tab: TabType) => void;
-  openDrawer: (content: 'players' | 'chat' | 'video' | 'settings') => void;
+  openDrawer: (content: 'players' | 'chat' | 'video' | 'settings' | 'history') => void;
   closeDrawer: () => void;
   setChatBadge: (count: number) => void;
   clearChatBadge: () => void;
@@ -20,7 +20,7 @@ export const useMobileNavigation = (): MobileNavigationState & MobileNavigationA
   // Split state to prevent unnecessary re-renders
   const [activeTab, setActiveTabState] = useState<TabType>('game');
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [drawerContent, setDrawerContent] = useState<'players' | 'chat' | 'video' | 'settings' | null>(null);
+  const [drawerContent, setDrawerContent] = useState<'players' | 'chat' | 'video' | 'settings' | 'history' | null>(null);
   const [chatBadge, setChatBadgeState] = useState(0);
 
   // Memoized callback: Handle tab change
@@ -36,18 +36,21 @@ export const useMobileNavigation = (): MobileNavigationState & MobileNavigationA
         ? 'video'
         : tab === 'settings'
         ? 'settings'
+        : tab === 'history'
+        ? 'history'
         : 'chat'
     );
   }, []);
 
   // Memoized callback: Open drawer with specific content
-  const openDrawer = useCallback((content: 'players' | 'chat' | 'video' | 'settings') => {
+  const openDrawer = useCallback((content: 'players' | 'chat' | 'video' | 'settings' | 'history') => {
     setIsDrawerOpen(true);
     setDrawerContent(content);
     setActiveTabState(
       content === 'players' ? 'players' :
       content === 'video' ? 'video' :
       content === 'settings' ? 'settings' :
+      content === 'history' ? 'history' :
       'chat'
     );
   }, []);

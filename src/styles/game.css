@@ -1277,6 +1277,24 @@
     width: 100%;
   }
 
+  /* WordHistory in mobile drawer context */
+  .word-history {
+    max-width: none;
+    margin: 0 -1rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid var(--panel-border);
+    padding: 0.75rem 1rem;
+  }
+
+  .history-header {
+    padding: 0.5rem 0;
+  }
+
+  .history-header h3 {
+    font-size: 1rem;
+  }
+
   .victory-title,
   .gameover-title {
     font-size: 2.5rem;

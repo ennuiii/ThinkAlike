@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { MessageCircle, Gamepad2, Users, Video, Settings } from 'lucide-react';
+import { MessageCircle, Gamepad2, Users, Video, Settings, History } from 'lucide-react';
 import '../styles/BottomTabBar.css';
 
-export type TabType = 'game' | 'players' | 'chat' | 'video' | 'settings';
+export type TabType = 'game' | 'players' | 'chat' | 'video' | 'settings' | 'history';
 
 interface TabItem {
   id: TabType;
@@ -46,6 +46,11 @@ export const BottomTabBar = React.memo<BottomTabBarProps>(
           id: 'settings',
           label: 'Settings',
           icon: <Settings className="w-5 h-5" />,
+        },
+        {
+          id: 'history',
+          label: 'History',
+          icon: <History className="w-5 h-5" />,
         },
       ],
       []

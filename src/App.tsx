@@ -15,6 +15,7 @@ import { WebRTCProvider } from './contexts/WebRTCContext';
 import { WebcamConfigProvider } from './config/WebcamConfig';
 import WebcamDisplay from './components/WebcamDisplay';
 import { VideoDrawerContent } from './components/VideoDrawerContent';
+import { WordHistory } from './components/ui/WordHistory';
 import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
@@ -527,6 +528,7 @@ function AppContent() {
                   if (tab === 'players') mobileNav.openDrawer('players');
                   if (tab === 'video') mobileNav.openDrawer('video');
                   if (tab === 'settings') mobileNav.openDrawer('settings');
+                  if (tab === 'history') mobileNav.openDrawer('history');
                 }}
               />
             )}
@@ -541,7 +543,8 @@ function AppContent() {
                   mobileNav.drawerContent === 'chat' ? 'Chat' :
                   mobileNav.drawerContent === 'players' ? 'Players' :
                   mobileNav.drawerContent === 'video' ? 'Video' :
-                  mobileNav.drawerContent === 'settings' ? 'Settings' : ''
+                  mobileNav.drawerContent === 'settings' ? 'Settings' :
+                  mobileNav.drawerContent === 'history' ? 'History' : ''
                 }
               >
                 {mobileNav.drawerContent === 'chat' && (
@@ -567,6 +570,9 @@ function AppContent() {
                   <div className="p-4">
                     <SettingsModal onClose={mobileNav.closeDrawer} />
                   </div>
+                )}
+                {mobileNav.drawerContent === 'history' && (
+                  <WordHistory rounds={lobby.gameData.rounds} />
                 )}
               </MobileDrawer>
             )}

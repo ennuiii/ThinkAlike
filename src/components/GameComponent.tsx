@@ -121,7 +121,7 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
 
       {/* Main game content - Flex 1, responsive */}
       <div className="game-main-content flex-1 w-full order-2 lg:order-2 relative">
-        {/* Word History - Top Left of game area */}
+        {/* Word History - Top Left of game area (Desktop only, mobile uses drawer) */}
         {lobby.state !== 'VICTORY' &&
           lobby.state !== 'GAME_OVER' &&
           lobby.gameData &&
