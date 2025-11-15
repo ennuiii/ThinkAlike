@@ -121,13 +121,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
 
           {/* Background Music Toggle */}
           <div className="settings-section">
-            <label className="settings-toggle" onClick={() => {}}>
+            <label className="settings-toggle">
               <input
                 type="checkbox"
                 checked={backgroundMusicEnabled}
                 onChange={handleBackgroundMusicToggle}
                 className="mute-checkbox"
                 aria-label="Enable background music"
+                key={`bgmusic-${backgroundMusicEnabled}`}
               />
               <span className="toggle-label">Enable Background Music</span>
             </label>
@@ -135,13 +136,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
 
           {/* Sound Effects Toggle */}
           <div className="settings-section">
-            <label className="settings-toggle" onClick={() => {}}>
+            <label className="settings-toggle">
               <input
                 type="checkbox"
                 checked={soundEffectsEnabled}
                 onChange={handleSoundEffectsToggle}
                 className="mute-checkbox"
                 aria-label="Enable sound effects"
+                key={`sfx-${soundEffectsEnabled}`}
               />
               <span className="toggle-label">Enable Sound Effects</span>
             </label>
