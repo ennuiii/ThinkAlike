@@ -7,6 +7,7 @@ import VoiceModeInput from './game/VoiceModeInput';
 import { RevealScreen } from './game/RevealScreen';
 import { VictoryScreen } from './game/VictoryScreen';
 import { GameOverScreen } from './game/GameOverScreen';
+import { SpectatorView } from './game/SpectatorView';
 import { LivesDisplay } from './ui/LivesDisplay';
 import { WordHistory } from './ui/WordHistory';
 import RoundStartOverlay from './overlays/RoundStartOverlay';
@@ -57,6 +58,19 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
   // ============================================================================
 
   const renderGamePhase = () => {
+    // If spectator, show spectator view for all game phases
+    if (lobby.isSpectator) {
+      if (lobby.state === 'LOBBY_WAITING') {
+        return (
+          <div className="text-center py-20">
+            <p className="text-slate-300 text-lg">Waiting for game to start...</p>
+          </div>
+        );
+      }
+      return <SpectatorView lobby={lobby} socket={socket} />;
+    }
+
+    // Player game phase rendering
     switch (lobby.state) {
       case 'ROUND_PREP':
         return (
@@ -69,7 +83,7 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
       case 'WORD_INPUT':
         return lobby.settings?.voiceMode
           ? <VoiceModeInput lobby={lobby} socket={socket} />
-          : <TextModeInput lobby={lobby} onSubmit={handleSubmitWord} />;
+          : <TextModeInput lobby={lobby} onSubmit={handleSubmitWord} socket={socket} />;
 
       case 'REVEAL':
         return <RevealScreen lobby={lobby} onNextRound={handleNextRound} />;

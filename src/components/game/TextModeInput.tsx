@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import type { Lobby } from '../../types';
+import type { Socket } from 'socket.io-client';
 
 interface TextModeInputProps {
   lobby: Lobby;
   onSubmit: (word: string) => void;
+  socket?: Socket;
 }
 
-export const TextModeInput: React.FC<TextModeInputProps> = ({ lobby, onSubmit }) => {
+export const TextModeInput: React.FC<TextModeInputProps> = ({ lobby, onSubmit, socket }) => {
   const [word, setWord] = useState('');
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -20,6 +22,16 @@ export const TextModeInput: React.FC<TextModeInputProps> = ({ lobby, onSubmit })
       setHasSubmitted(false);
     }
   }, [myPlayer?.hasSubmitted]);
+
+  const handleWordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newWord = e.target.value;
+    setWord(newWord);
+
+    // Emit typing update to server (for spectators to see in real-time)
+    if (socket && !hasSubmitted) {
+      socket.emit('game:typing-update', { word: newWord });
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +73,7 @@ export const TextModeInput: React.FC<TextModeInputProps> = ({ lobby, onSubmit })
           <input
             type="text"
             value={word}
-            onChange={(e) => setWord(e.target.value)}
+            onChange={handleWordChange}
             placeholder="Type your word..."
             className="word-input text-lg sm:text-xl md:text-2xl px-4 py-3 w-full"
             autoFocus
