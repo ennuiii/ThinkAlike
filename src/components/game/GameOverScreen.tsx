@@ -77,12 +77,14 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({ lobby, onRestart
           )}
         </div>
 
-        {/* Action buttons */}
-        <div className="gameover-actions">
-          <button className="retry-button" onClick={onRestart}>
-            🔄 Try Again
-          </button>
-        </div>
+        {/* Action buttons - Only for players, not spectators */}
+        {!lobby.isSpectator && (
+          <div className="gameover-actions">
+            <button className="retry-button" onClick={onRestart}>
+              🔄 Try Again
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

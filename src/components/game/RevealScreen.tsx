@@ -109,8 +109,8 @@ export const RevealScreen: React.FC<RevealScreenProps> = ({ lobby, onNextRound }
           </div>
         )}
 
-        {/* Next round button (only show if not match - match goes to victory) */}
-        {!isMatch && lobby.gameData && lobby.gameData.livesRemaining > 0 && (
+        {/* Next round button (only show if not match - match goes to victory, and not a spectator) */}
+        {!isMatch && lobby.gameData && lobby.gameData.livesRemaining > 0 && !lobby.isSpectator && (
           <button className="next-round-button" onClick={onNextRound}>
             Try Again (Round {(lobby.gameData.currentRound || 0) + 1})
           </button>

@@ -82,12 +82,14 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
           </div>
         )}
 
-        {/* Action buttons */}
-        <div className="victory-actions">
-          <button className="play-again-button" onClick={onRestart}>
-            🎮 Play Again
-          </button>
-        </div>
+        {/* Action buttons - Only for players, not spectators */}
+        {!lobby.isSpectator && (
+          <div className="victory-actions">
+            <button className="play-again-button" onClick={onRestart}>
+              🎮 Play Again
+            </button>
+          </div>
+        )}
 
         {/* Encouragement message */}
         <div className="victory-message">
