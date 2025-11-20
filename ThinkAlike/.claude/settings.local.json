@@ -23,7 +23,11 @@
       "Bash(tree:*)",
       "Bash(move SKILL.md .claudeskillsgamebuddies-game-generatorSKILL.md)",
       "Bash(npm install:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git checkout:*)",
+      "Bash(git prune:*)",
+      "Bash(git gc:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
