@@ -1,0 +1,216 @@
+/* ========================================
+   WEBCAM CAROUSEL - Mobile Horizontal Scroll
+   ======================================== */
+
+.webcam-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+/* Carousel Container */
+.webcam-carousel-container {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+  padding: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling on iOS */
+}
+
+/* Hide scrollbar while keeping scroll functionality */
+.webcam-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.webcam-carousel-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Carousel Item */
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Video Wrapper */
+.carousel-video-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: var(--bg-darker);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--panel-border);
+  transition: all var(--transition-fast);
+}
+
+.carousel-item:hover .carousel-video-wrapper {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Video Element */
+.carousel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder */
+.carousel-video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--secondary-rgb), 0.1));
+}
+
+/* Label */
+.carousel-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Navigation Buttons */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-webcam);
+  width: 36px;
+  height: 36px;
+  background: rgba(var(--primary-rgb), 0.15);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.carousel-nav-btn:hover {
+  background: rgba(var(--primary-rgb), 0.25);
+  box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.4);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-nav-left {
+  left: 0.5rem;
+}
+
+.carousel-nav-right {
+  right: 0.5rem;
+}
+
+/* Empty State */
+.carousel-empty {
+  width: 100%;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Small phones */
+@media (max-width: 480px) {
+  .carousel-video-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .carousel-label {
+    max-width: 100px;
+    font-size: 0.7rem;
+  }
+
+  .webcam-carousel-container {
+    gap: 0.5rem;
+    padding: 0.4rem;
+  }
+
+  .carousel-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .webcam-carousel-wrapper {
+    display: none; /* Use grid on tablet/desktop */
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carousel-item:hover .carousel-video-wrapper {
+    border-color: var(--panel-border); /* Don't change on hover for touch */
+    box-shadow: none;
+  }
+
+  .carousel-nav-btn:hover {
+    background: rgba(var(--primary-rgb), 0.15);
+    box-shadow: none;
+  }
+
+  .carousel-nav-btn:active {
+    transform: translateY(-50%) scale(0.9);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .webcam-carousel-container {
+    scroll-behavior: auto;
+  }
+
+  .carousel-video-wrapper,
+  .carousel-nav-btn {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .carousel-video-wrapper {
+    border-width: 3px;
+  }
+
+  .carousel-nav-btn {
+    border-width: 2px;
+  }
+}

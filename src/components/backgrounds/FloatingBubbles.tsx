@@ -1,8 +1,12 @@
 import React from 'react';
 
-const FloatingBubbles: React.FC = () => {
-  // Generate floating bubble elements
-  const bubbles = Array.from({ length: 15 }, (_, i) => ({
+interface FloatingBubblesProps {
+  isAnimating?: boolean;
+}
+
+const FloatingBubbles: React.FC<FloatingBubblesProps> = React.memo(({ isAnimating = false }) => {
+  // Generate floating bubble elements - reduced from 15 to 5 for performance
+  const bubbles = Array.from({ length: 5 }, (_, i) => ({
     id: i,
     left: Math.random() * 100,
     top: Math.random() * 100,
@@ -23,6 +27,9 @@ const FloatingBubbles: React.FC = () => {
         overflow: 'hidden',
         pointerEvents: 'none',
         background: `linear-gradient(135deg, #FAF3E0 0%, #FFF8E7 50%, #FFF4E6 100%)`,
+        // Performance optimization: contain layout, style, and paint
+        contain: isAnimating ? 'layout style paint' : 'strict',
+        willChange: isAnimating ? 'auto' : 'unset',
       }}
     >
       {/* Paper texture overlay */}
@@ -47,9 +54,9 @@ const FloatingBubbles: React.FC = () => {
             top: `${bubble.top}%`,
             background: `radial-gradient(135deg, rgba(138, 198, 209, 0.3) 0%, rgba(255, 180, 162, 0.2) 100%)`,
             border: `2px solid rgba(138, 198, 209, 0.2)`,
-            animation: `float${(bubble.id % 3) + 1} ${bubble.duration}s ease-in-out infinite`,
-            animationDelay: `${bubble.delay}s`,
-            filter: 'blur(0.5px)',
+            animation: isAnimating ? `float${(bubble.id % 3) + 1} ${bubble.duration}s ease-in-out infinite` : 'none',
+            animationDelay: isAnimating ? `${bubble.delay}s` : '0s',
+            filter: isAnimating ? 'blur(0.5px)' : 'none',
           }}
         />
       ))}
@@ -99,6 +106,8 @@ const FloatingBubbles: React.FC = () => {
       `}</style>
     </div>
   );
-};
+});
+
+FloatingBubbles.displayName = 'FloatingBubbles';
 
 export default FloatingBubbles;

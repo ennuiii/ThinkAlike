@@ -1,6 +1,10 @@
 import React from 'react';
 
-const WaveBackground: React.FC = () => {
+interface WaveBackgroundProps {
+  isAnimating?: boolean;
+}
+
+const WaveBackground: React.FC<WaveBackgroundProps> = React.memo(({ isAnimating = false }) => {
   return (
     <div
       style={{
@@ -13,6 +17,9 @@ const WaveBackground: React.FC = () => {
         overflow: 'hidden',
         pointerEvents: 'none',
         background: 'linear-gradient(180deg, #2A1F1F 0%, #3D2F2F 100%)',
+        // Performance optimization: contain layout, style, and paint
+        contain: isAnimating ? 'layout style paint' : 'strict',
+        willChange: isAnimating ? 'auto' : 'unset',
       }}
     >
       {/* Main gradient background */}
@@ -21,7 +28,7 @@ const WaveBackground: React.FC = () => {
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid slice"
         style={{
-          filter: 'blur(40px)',
+          filter: isAnimating ? 'blur(40px)' : 'none',
           opacity: 0.3,
         }}
       >
@@ -48,7 +55,7 @@ const WaveBackground: React.FC = () => {
           r="400"
           fill="url(#grad1)"
           style={{
-            animation: 'float1 20s ease-in-out infinite',
+            animation: isAnimating ? 'float1 20s ease-in-out infinite' : 'none',
           }}
         />
         <circle
@@ -57,7 +64,7 @@ const WaveBackground: React.FC = () => {
           r="350"
           fill="url(#grad2)"
           style={{
-            animation: 'float2 25s ease-in-out infinite',
+            animation: isAnimating ? 'float2 25s ease-in-out infinite' : 'none',
           }}
         />
         <circle
@@ -66,7 +73,7 @@ const WaveBackground: React.FC = () => {
           r="300"
           fill="url(#grad3)"
           style={{
-            animation: 'float3 30s ease-in-out infinite',
+            animation: isAnimating ? 'float3 30s ease-in-out infinite' : 'none',
           }}
         />
       </svg>
@@ -96,7 +103,7 @@ const WaveBackground: React.FC = () => {
           d="M 0,60 Q 150,30 300,60 T 600,60 T 900,60 T 1200,60 L 1200,120 L 0,120 Z"
           fill="url(#waveGrad1)"
           style={{
-            animation: 'wave1 8s ease-in-out infinite',
+            animation: isAnimating ? 'wave1 8s ease-in-out infinite' : 'none',
             transformOrigin: 'center',
           }}
         />
@@ -106,8 +113,8 @@ const WaveBackground: React.FC = () => {
           d="M 0,70 Q 150,40 300,70 T 600,70 T 900,70 T 1200,70 L 1200,120 L 0,120 Z"
           fill="url(#waveGrad2)"
           style={{
-            animation: 'wave2 8s ease-in-out infinite',
-            animationDelay: '0.5s',
+            animation: isAnimating ? 'wave2 8s ease-in-out infinite' : 'none',
+            animationDelay: isAnimating ? '0.5s' : '0s',
             transformOrigin: 'center',
           }}
         />
@@ -145,6 +152,8 @@ const WaveBackground: React.FC = () => {
       `}</style>
     </div>
   );
-};
+});
+
+WaveBackground.displayName = 'WaveBackground';
 
 export default WaveBackground;

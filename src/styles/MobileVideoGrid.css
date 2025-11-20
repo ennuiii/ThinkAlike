@@ -1,0 +1,401 @@
+/* ========================================
+   MOBILE VIDEO GRID - Responsive Grid Layout
+   ======================================== */
+
+.mobile-video-grid-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(80vh - 60px);
+}
+
+/* Main Grid Container */
+.mobile-video-grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 12px;
+  padding: 12px;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* Default: 2 columns for mobile portrait */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Video Tile */
+.video-tile {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-darker);
+  border: 1px solid var(--panel-border);
+  transition: all 0.2s ease;
+}
+
+.video-tile:active {
+  transform: scale(0.95);
+}
+
+/* Inner video container for aspect ratio */
+.video-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-darker);
+  overflow: hidden;
+}
+
+/* Video Element */
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder when no camera */
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--secondary-rgb), 0.1));
+}
+
+/* Status Dot (Active/Inactive Indicator) */
+.status-dot {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.status-dot.active {
+  background: #22c55e; /* Green */
+  animation: pulse-status 2s ease-in-out infinite;
+}
+
+.status-dot.inactive {
+  background: #ef4444; /* Red */
+}
+
+@keyframes pulse-status {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+  }
+}
+
+/* Player Name Overlay */
+.player-name-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.player-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.self-badge {
+  font-size: 0.65rem;
+  background: rgba(var(--primary-rgb), 0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Video Controls */
+.video-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 20;
+}
+
+.control-btn {
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.control-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.control-btn:active {
+  transform: scale(0.9);
+}
+
+.mute-btn,
+.mic-btn {
+  /* Specific button colors could go here */
+}
+
+.hide-btn {
+  /* Specific button colors could go here */
+}
+
+/* Empty State */
+.mobile-video-grid-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 200px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state small {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Join Video Chat Button */
+.join-video-btn {
+  margin-top: 0.5rem;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+.join-video-btn:hover {
+  background: var(--primary-dark, #2563eb);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
+}
+
+.join-video-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .join-video-btn {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Bottom Actions Bar */
+.mobile-video-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--panel-border);
+  background: var(--bg-card);
+  flex-shrink: 0;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px 12px;
+  background: rgba(var(--primary-rgb), 0.1);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.action-btn:hover {
+  background: rgba(var(--primary-rgb), 0.2);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.settings-btn {
+  /* Primary action */
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablets/Landscape - 3 columns */
+@media (min-width: 600px) {
+  .mobile-video-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .video-tile {
+    border-radius: 14px;
+  }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .player-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* Large tablets - dynamic sizing */
+@media (min-width: 900px) {
+  .mobile-video-grid {
+    grid-auto-rows: minmax(180px, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+/* Small phones - squeeze columns */
+@media (max-width: 400px) {
+  .mobile-video-grid {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .control-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .player-name {
+    font-size: 0.65rem;
+  }
+
+  .self-badge {
+    font-size: 0.55rem;
+    padding: 1px 4px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .video-tile,
+  .control-btn,
+  .action-btn,
+  .status-dot {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .video-tile {
+    border-width: 2px;
+  }
+
+  .control-btn {
+    border-width: 2px;
+  }
+
+  .status-dot {
+    border-width: 3px;
+  }
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+.mobile-video-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-video-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-video-grid::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary-rgb), 0.3);
+  border-radius: 3px;
+}
+
+.mobile-video-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary-rgb), 0.5);
+}
+
+/* Mobile fallback: hide scrollbar */
+.mobile-video-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

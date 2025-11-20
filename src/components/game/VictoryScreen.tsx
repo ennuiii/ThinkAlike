@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Lobby } from '../../types';
 import { Confetti } from '../animations/Confetti';
+import { soundEffects } from '../../utils/soundEffects';
 
 interface VictoryScreenProps {
   lobby: Lobby;
@@ -16,6 +17,11 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
   // Calculate stats
   const totalAttempts = lobby.gameData?.rounds.length || 0;
 
+  // Play victory sound on mount
+  useEffect(() => {
+    soundEffects.play('win');
+  }, []);
+
   return (
     <div className="victory-container">
       {/* Confetti celebration */}
@@ -23,7 +29,7 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
 
       <div className="victory-content px-4">
         {/* Trophy icon */}
-        <div className="trophy-icon text-5xl sm:text-6xl md:text-7xl">🏆</div>
+        <img src={import.meta.env.BASE_URL + 'trophy.svg'} alt="Victory Trophy" className="trophy-icon" />
 
         {/* Victory title */}
         <h1 className="victory-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl">VICTORY!</h1>
@@ -76,12 +82,14 @@ export const VictoryScreen: React.FC<VictoryScreenProps> = ({ lobby, onRestart }
           </div>
         )}
 
-        {/* Action buttons */}
-        <div className="victory-actions">
-          <button className="play-again-button" onClick={onRestart}>
-            🎮 Play Again
-          </button>
-        </div>
+        {/* Action buttons - Only for players, not spectators */}
+        {!lobby.isSpectator && (
+          <div className="victory-actions">
+            <button className="play-again-button" onClick={onRestart}>
+              🎮 Play Again
+            </button>
+          </div>
+        )}
 
         {/* Encouragement message */}
         <div className="victory-message">

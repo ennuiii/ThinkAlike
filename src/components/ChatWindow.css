@@ -17,7 +17,7 @@
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(168, 85, 247, 0.5);
   transition: all var(--transition);
-  z-index: 1000;
+  z-index: var(--z-mobile-nav);
   color: white;
   border: 1px solid var(--panel-border);
 }
@@ -238,7 +238,7 @@
   bottom: 100%;
   left: 1rem;
   margin-bottom: 8px;
-  z-index: 10;
+  z-index: var(--z-webcam);
 }
 
 .chat-input-wrapper {

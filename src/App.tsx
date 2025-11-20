@@ -8,18 +8,28 @@ import LobbyComponent from './components/Lobby';
 import GameComponent from './components/GameComponent';
 import ChatWindow from './components/ChatWindow';
 import PlayerList from './components/PlayerList';
+import { BottomTabBar } from './components/BottomTabBar';
+import { MobileDrawer } from './components/MobileDrawer';
+import { useMobileNavigation } from './hooks/useMobileNavigation';
 import { WebRTCProvider } from './contexts/WebRTCContext';
 import { WebcamConfigProvider } from './config/WebcamConfig';
 import WebcamDisplay from './components/WebcamDisplay';
+import { VideoDrawerContent } from './components/VideoDrawerContent';
+import { WordHistory } from './components/ui/WordHistory';
 import { createGameAdapter } from './adapters/gameAdapter';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
-import WaveBackground from './components/backgrounds/WaveBackground';
-import FloatingBubbles from './components/backgrounds/FloatingBubbles';
+import SettingsButton from './components/SettingsButton';
+import { SettingsModal } from './components/SettingsModal';
+import { backgroundMusic } from './utils/backgroundMusic';
+import { soundEffects } from './utils/soundEffects';
+// Background components removed for performance - using simple CSS gradients instead
 import './App.css';
 import './styles/responsive.css';
 import './styles/mobile.css';
 import './styles/game.css';
+import './styles/BottomTabBar.css';
+import './styles/MobileDrawer.css';
 
 function AppContent() {
   const { theme } = useTheme();
@@ -31,6 +41,9 @@ function AppContent() {
   const [_isWebcamHidden, _setIsWebcamHidden] = useState(false);
   const [_sessionToken, setSessionToken] = useState<string | null>(null);
   const isReconnecting = useRef(false);
+
+  // Mobile navigation state
+  const mobileNav = useMobileNavigation();
 
   const handleCreateRoom = useCallback((playerName: string, session: GameBuddiesSession | null) => {
     const socket = socketService.getSocket();
@@ -385,20 +398,77 @@ function AppContent() {
     }
   };
 
+  // Control background music based on lobby state
+  useEffect(() => {
+    if (!lobby) {
+      // Stop music when not in a lobby (home page)
+      backgroundMusic.stop();
+      return;
+    }
+
+    const shouldPlayMusic =
+      lobby.state === 'LOBBY_WAITING' ||
+      lobby.state === 'ROUND_PREP' ||
+      lobby.state === 'WORD_INPUT' ||
+      lobby.state === 'REVEAL';
+
+    if (shouldPlayMusic) {
+      backgroundMusic.play();
+    } else if (lobby.state === 'VICTORY' || lobby.state === 'GAME_OVER') {
+      // Stop music at end of game
+      backgroundMusic.stop();
+    }
+  }, [lobby?.state, lobby]);
+
+  // Initialize audio preferences on app start
+  useEffect(() => {
+    // Load background music preference (default: OFF)
+    const savedBgMusic = localStorage.getItem('thinkalike-background-music-enabled');
+    const bgMusicEnabled = savedBgMusic ? JSON.parse(savedBgMusic) : false;
+    backgroundMusic.setEnabled(bgMusicEnabled);
+
+    // Load sound effects preference (default: ON)
+    const savedSfx = localStorage.getItem('thinkalike-sound-effects-enabled');
+    const sfxEnabled = savedSfx ? JSON.parse(savedSfx) : true;
+    soundEffects.setEnabled(sfxEnabled);
+
+    // Load volume preference (default: 50%)
+    const savedVolume = localStorage.getItem('thinkalike-volume');
+    if (savedVolume) {
+      const vol = parseInt(savedVolume, 10);
+      soundEffects.setVolume(vol / 100);
+      backgroundMusic.setVolume(vol / 100);
+    }
+  }, []); // Run once on app mount
+
   const socket = socketService.getSocket();
   const webcamConfig = socket && lobby ? createGameAdapter(socket, lobby.code, lobby) : null;
 
   return (
     <div className="app-root">
-      {theme === 'neural-sync' ? <WaveBackground /> : <FloatingBubbles />}
+      {/* Simplified static background for better performance */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+          background: theme === 'neural-sync'
+            ? 'linear-gradient(180deg, #2A1F1F 0%, #3D2F2F 100%)'
+            : 'linear-gradient(135deg, #FAF3E0 0%, #FFF8E7 50%, #FFF4E6 100%)',
+        }}
+      />
       <ThemeToggle />
+      <SettingsButton />
         {webcamConfig ? (
           <WebcamConfigProvider config={webcamConfig}>
             <WebRTCProvider>
             <div className="app-layout">
-              {/* Webcam Bar - Full Width */}
+              {/* Webcam Bar - Desktop Only */}
               <div
-                className="p-3"
+                className="hidden lg:block p-3"
                 style={{
                   background: 'var(--panel-bg)',
                   borderBottom: '1px solid var(--panel-border)',
@@ -411,7 +481,7 @@ function AppContent() {
               <div className="flex flex-col lg:flex-row flex-1 min-h-0">
 
                 {/* Main Content - Takes Remaining Space */}
-                <div className="flex-1 overflow-y-auto p-4 lg:p-6">
+                <div className="flex-1 overflow-y-auto p-4 lg:p-6 pb-20 lg:pb-6">
                   {error && (
                     <div className="error-message bg-red-500/20 border border-red-500 text-red-200 p-4 rounded-lg" style={{ margin: '20px auto', maxWidth: '600px' }}>
                       {error}
@@ -420,10 +490,10 @@ function AppContent() {
                   {renderContent()}
                 </div>
 
-                {/* Right Sidebar - UTMOST RIGHT on Desktop */}
+                {/* Right Sidebar - UTMOST RIGHT on Desktop, Hidden on Mobile */}
                 {lobby && (
                   <div
-                    className="w-full lg:w-96 h-80 lg:h-auto flex flex-col"
+                    className="hidden lg:flex w-full lg:w-96 h-80 lg:h-auto flex-col"
                     style={{
                       borderTop: '1px solid var(--panel-border)',
                       borderLeft: '1px solid var(--panel-border)',
@@ -447,6 +517,66 @@ function AppContent() {
 
               </div>
             </div>
+
+            {/* Mobile Navigation Bar - Bottom Tab Bar */}
+            {lobby && (
+              <BottomTabBar
+                activeTab={mobileNav.activeTab}
+                showHistory={lobby.state !== 'LOBBY_WAITING'}
+                onTabChange={(tab) => {
+                  mobileNav.setActiveTab(tab);
+                  if (tab === 'chat') mobileNav.openDrawer('chat');
+                  if (tab === 'players') mobileNav.openDrawer('players');
+                  if (tab === 'video') mobileNav.openDrawer('video');
+                  if (tab === 'settings') mobileNav.openDrawer('settings');
+                  if (tab === 'history') mobileNav.openDrawer('history');
+                }}
+              />
+            )}
+
+            {/* Mobile Drawer - Dynamic Content */}
+            {lobby && mobileNav.isDrawerOpen && (
+              <MobileDrawer
+                isOpen={mobileNav.isDrawerOpen}
+                onClose={mobileNav.closeDrawer}
+                position="bottom"
+                title={
+                  mobileNav.drawerContent === 'chat' ? 'Chat' :
+                  mobileNav.drawerContent === 'players' ? 'Players' :
+                  mobileNav.drawerContent === 'video' ? 'Video' :
+                  mobileNav.drawerContent === 'settings' ? 'Settings' :
+                  mobileNav.drawerContent === 'history' ? 'History' : ''
+                }
+              >
+                {mobileNav.drawerContent === 'chat' && (
+                  <ChatWindow
+                    messages={messages}
+                    socket={socket!}
+                    roomCode={lobby.code}
+                  />
+                )}
+                {mobileNav.drawerContent === 'players' && (
+                  <PlayerList
+                    players={lobby.players}
+                    hostId={lobby.hostId}
+                    mySocketId={lobby.mySocketId}
+                    roomCode={lobby.code}
+                    socket={socket!}
+                  />
+                )}
+                {mobileNav.drawerContent === 'video' && (
+                  <VideoDrawerContent players={lobby.players} />
+                )}
+                {mobileNav.drawerContent === 'settings' && (
+                  <div className="p-4">
+                    <SettingsModal onClose={mobileNav.closeDrawer} />
+                  </div>
+                )}
+                {mobileNav.drawerContent === 'history' && lobby.gameData && (
+                  <WordHistory rounds={lobby.gameData.rounds} />
+                )}
+              </MobileDrawer>
+            )}
           </WebRTCProvider>
         </WebcamConfigProvider>
       ) : (

@@ -26,7 +26,7 @@
   background: var(--bg-card);
 
   border-top: 1px solid var(--panel-border);
-  z-index: 1000;
+  z-index: var(--z-mobile-nav);
   display: none;
 }
 
@@ -71,7 +71,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  z-index: var(--z-mobile-drawer);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition);
@@ -230,7 +230,7 @@
     position: fixed;
     bottom: 60px; /* Above mobile nav */
     right: 20px;
-    z-index: 997;
+    z-index: var(--z-chat-drawer-backdrop);
   }
 
   .mobile-chat-toggle {
@@ -266,7 +266,7 @@
     flex-direction: column;
     transform: translateY(100%);
     transition: transform var(--transition);
-    z-index: 999;
+    z-index: var(--z-mobile-fab-cluster);
   }
 
   .mobile-chat-window.open {
@@ -326,7 +326,7 @@
     transform: translateX(-50%);
     display: flex;
     gap: 1rem;
-    z-index: 996;
+    z-index: var(--z-settings-fab);
   }
 
   .mobile-control-btn {
@@ -365,7 +365,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: var(--z-settings-modal);
 }
 
 .mobile-loading-spinner {
@@ -402,7 +402,7 @@
     border-radius: 12px;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 10000;
+    z-index: var(--z-round-start-overlay);
     transform: translateY(-150%);
     transition: transform var(--transition);
   }
@@ -470,7 +470,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 995;
+  z-index: var(--z-theme-toggle);
   transition: transform var(--transition-fast);
 }
 

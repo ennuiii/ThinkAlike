@@ -7,6 +7,7 @@ import VoiceModeInput from './game/VoiceModeInput';
 import { RevealScreen } from './game/RevealScreen';
 import { VictoryScreen } from './game/VictoryScreen';
 import { GameOverScreen } from './game/GameOverScreen';
+import { SpectatorView } from './game/SpectatorView';
 import { LivesDisplay } from './ui/LivesDisplay';
 import { WordHistory } from './ui/WordHistory';
 import RoundStartOverlay from './overlays/RoundStartOverlay';
@@ -57,6 +58,18 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
   // ============================================================================
 
   const renderGamePhase = () => {
+    // Special case: waiting in lobby
+    if (lobby.state === 'LOBBY_WAITING') {
+      if (lobby.isSpectator) {
+        return (
+          <div className="text-center py-20">
+            <p className="text-slate-300 text-lg">Waiting for game to start...</p>
+          </div>
+        );
+      }
+    }
+
+    // Shared rendering for all game phases
     switch (lobby.state) {
       case 'ROUND_PREP':
         return (
@@ -67,9 +80,14 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
         );
 
       case 'WORD_INPUT':
+        // Spectators see their own view during word input (both players typing)
+        if (lobby.isSpectator) {
+          return <SpectatorView lobby={lobby} socket={socket} />;
+        }
+        // Players see their own input field
         return lobby.settings?.voiceMode
           ? <VoiceModeInput lobby={lobby} socket={socket} />
-          : <TextModeInput lobby={lobby} onSubmit={handleSubmitWord} />;
+          : <TextModeInput lobby={lobby} onSubmit={handleSubmitWord} socket={socket} />;
 
       case 'REVEAL':
         return <RevealScreen lobby={lobby} onNextRound={handleNextRound} />;
@@ -121,7 +139,7 @@ const GameComponent: React.FC<GameComponentProps> = ({ lobby, socket }) => {
 
       {/* Main game content - Flex 1, responsive */}
       <div className="game-main-content flex-1 w-full order-2 lg:order-2 relative">
-        {/* Word History - Top Left of game area */}
+        {/* Word History - Top Left of game area (Desktop only, mobile uses drawer) */}
         {lobby.state !== 'VICTORY' &&
           lobby.state !== 'GAME_OVER' &&
           lobby.gameData &&

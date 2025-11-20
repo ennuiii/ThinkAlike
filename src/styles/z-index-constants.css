@@ -1,0 +1,52 @@
+/* ========================================
+   Z-INDEX CONSTANTS - Centralized Layer Management
+   ======================================== */
+
+:root {
+  /* Background layers */
+  --z-background: -2;
+  --z-background-grid: -1;
+
+  /* Content layers */
+  --z-content: 1;
+  --z-webcam: 10;
+  --z-game: 20;
+
+  /* UI elements (Mobile FABs, buttons, toggles) */
+  --z-theme-toggle: 995;
+  --z-settings-fab: 996;
+  --z-chat-drawer-backdrop: 997;
+  --z-mobile-drawer: 998;
+  --z-mobile-fab-cluster: 999;
+  --z-mobile-nav: 1000;
+
+  /* Overlays (drawers, modals, backdrops) */
+  --z-orientation-prompt: 9997;
+  --z-settings-modal-backdrop: 9998;
+  --z-settings-modal: 9999;
+  --z-round-start-overlay: 10000;
+
+  /* Critical overlays (alerts, toasts) */
+  --z-mobile-toast: 10001;
+
+  /* Accessibility (always highest) */
+  --z-skip-link: 10002;
+}
+
+/* ========================================
+   Z-INDEX LAYER REFERENCE
+   ======================================== */
+
+/*
+  Layer Hierarchy (lowest to highest):
+
+  -2 to -1:  Background layers (animated backgrounds, grids)
+  1 to 20:   Content layers (game content, cards, webcam)
+  995-1000:  UI elements (FABs, toggles, nav buttons)
+  9998-9999: Modal backdrops and settings
+  10000+:    Critical overlays (countdown, toasts)
+  10002:     Accessibility (skip links)
+
+  NEVER use hardcoded z-index values - always use CSS variables
+  This ensures consistent stacking without conflicts
+*/

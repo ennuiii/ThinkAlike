@@ -117,11 +117,6 @@ const Home: React.FC<HomeProps> = ({ onCreateRoom, onJoinRoom, gameBuddiesSessio
 
         <div className="home-header">
           <span className="eyebrow">Live word sync</span>
-          <img
-            src="/logo.png"
-            alt="Minds thinking alike"
-            className="hero-logo"
-          />
           <h1>ThinkAlike</h1>
           <p className="home-tagline">
             Team up with your brain twin, think in perfect sync, and trust your instincts before the timer fades.

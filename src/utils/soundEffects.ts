@@ -5,7 +5,7 @@
  * Sound files should be placed in: client/src/assets/sounds/
  */
 
-type SoundType = 'match' | 'lose-life' | 'timer-tick' | 'victory';
+type SoundType = 'match' | 'lose-life' | 'timer-tick' | 'victory' | 'countdown' | 'win' | 'lose';
 
 class SoundEffectsManager {
   private sounds: Map<SoundType, HTMLAudioElement> = new Map();
@@ -22,14 +22,17 @@ class SoundEffectsManager {
   private loadSounds() {
     const soundFiles: Record<SoundType, string> = {
       'match': '/sounds/match.mp3',
-      'lose-life': '/sounds/lose-life.mp3',
+      'lose-life': '/music/lose.mp3',
       'timer-tick': '/sounds/timer-tick.mp3',
-      'victory': '/sounds/victory.mp3'
+      'victory': '/sounds/victory.mp3',
+      'countdown': '/music/countdown.mp3',
+      'win': '/music/win.mp3',
+      'lose': '/music/lose.mp3'
     };
 
     Object.entries(soundFiles).forEach(([key, path]) => {
       try {
-        const audio = new Audio(path);
+        const audio = new Audio(import.meta.env.BASE_URL + path);
         audio.volume = this.volume;
         this.sounds.set(key as SoundType, audio);
       } catch (error) {
@@ -95,3 +98,6 @@ export const playMatchSound = () => soundEffects.play('match');
 export const playLoseLifeSound = () => soundEffects.play('lose-life');
 export const playTimerTickSound = () => soundEffects.play('timer-tick');
 export const playVictorySound = () => soundEffects.play('victory');
+export const playCountdownSound = () => soundEffects.play('countdown');
+export const playWinSound = () => soundEffects.play('win');
+export const playLoseSound = () => soundEffects.play('lose');

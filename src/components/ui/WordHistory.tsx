@@ -42,16 +42,6 @@ export const WordHistory: React.FC<WordHistoryProps> = ({ rounds, isCollapsed = 
                 <span className="vs">{round.wasMatch ? '=' : '≠'}</span>
                 <span className="word">{round.player2Word || '(empty)'}</span>
               </div>
-
-              {/* Result indicator */}
-              <div className={`result-indicator ${round.wasMatch ? 'match' : 'no-match'}`}>
-                {round.wasMatch ? '✓ Match!' : '✗ No match'}
-              </div>
-
-              {/* Time taken */}
-              <div className="time-taken">
-                {round.timeTaken}s
-              </div>
             </div>
           ))}
         </div>

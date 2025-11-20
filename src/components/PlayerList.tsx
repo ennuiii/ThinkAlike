@@ -13,7 +13,7 @@ interface PlayerListProps {
   showSkipButton?: boolean;
 }
 
-const PlayerList: React.FC<PlayerListProps> = ({
+const PlayerListComponent: React.FC<PlayerListProps> = ({
   players,
   hostId,
   mySocketId,
@@ -125,5 +125,19 @@ const PlayerList: React.FC<PlayerListProps> = ({
     </div>
   );
 };
+
+// Memoize component to prevent unnecessary re-renders
+const PlayerList = React.memo<PlayerListProps>(PlayerListComponent, (prevProps, nextProps) => {
+  // Custom comparison - re-render only if these props change
+  return (
+    prevProps.players === nextProps.players &&
+    prevProps.hostId === nextProps.hostId &&
+    prevProps.mySocketId === nextProps.mySocketId &&
+    prevProps.roomCode === nextProps.roomCode &&
+    prevProps.currentTurnPlayerId === nextProps.currentTurnPlayerId &&
+    prevProps.showSkipButton === nextProps.showSkipButton
+    // Note: socket and theme are always treated as different references, so they don't prevent memoization
+  );
+});
 
 export default PlayerList;

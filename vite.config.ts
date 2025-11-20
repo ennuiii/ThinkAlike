@@ -12,4 +12,13 @@ export default defineConfig({
     port: 5173,
     host: true,
   },
+  esbuild: {
+    drop: ['console', 'debugger'],
+  },
+  build: {
+    // Remove console logs and debugger statements in production
+    minify: 'esbuild',
+    // Optimize chunk size
+    chunkSizeWarningLimit: 600,
+  },
 })

@@ -17,6 +17,7 @@ export interface Player {
   disconnectedAt?: number;
   // ThinkAlike-specific fields
   isReady: boolean;
+  isSpectator: boolean;  // true if player is spectating (3rd+ player)
   currentWord: string | null;  // Hidden from opponent until both submit
   hasSubmitted: boolean;
   score?: number;  // Player score
@@ -69,10 +70,12 @@ export interface Lobby {
   code: string;
   hostId: string;
   settings: Settings;
-  players: Player[];
+  players: Player[];  // Active players only (first 2)
+  spectators?: Player[];  // Spectators (3rd+ players)
   state: GameState;
   gameData: GameData | null; // Your custom game state
   isGameBuddiesRoom: boolean;
+  isSpectator: boolean;  // true if you are spectating
   mySocketId: string;
   messages?: ChatMessage[];
 }

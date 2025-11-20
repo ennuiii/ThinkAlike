@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Video, Lock, AlertTriangle, Rocket } from 'lucide-react';
 import type { Lobby as LobbyType, Player, Settings } from '../types';
 import type { Socket } from 'socket.io-client';
 import type { GameBuddiesSession } from '../services/gameBuddiesSession';
@@ -109,7 +110,14 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
         style={{ borderRadius: cardRadius }}
       >
         <h3 className="text-xl font-semibold text-emerald-300 mb-4">
-          {hideRoomCode ? '🎥 Streamer Mode' : 'Room Code'}
+          {hideRoomCode ? (
+            <span className="flex items-center gap-2">
+              <Video className="w-4 h-4" />
+              Streamer Mode
+            </span>
+          ) : (
+            'Room Code'
+          )}
         </h3>
 
         {!hideRoomCode ? (
@@ -150,7 +158,10 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
 
         {hideRoomCode && (
           <p className="text-slate-500 text-sm text-center mt-3">
-            🔒 Link doesn't reveal room code - safe for streaming!
+            <span className="flex items-center gap-2">
+              <Lock className="w-4 h-4" />
+              Link doesn't reveal room code - safe for streaming!
+            </span>
           </p>
         )}
       </div>
@@ -161,7 +172,14 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
         style={{ borderRadius: cardRadius }}
       >
         <h2 className="text-xl font-semibold text-emerald-300 mb-4 flex items-center justify-between">
-          <span>Players ({lobby.players.length}/2)</span>
+          <span>
+            Players ({lobby.players.length}/2)
+            {lobby.spectators && lobby.spectators.length > 0 && (
+              <span className="text-slate-400 ml-3 text-sm">
+                + {lobby.spectators.length} spectator{lobby.spectators.length !== 1 ? 's' : ''}
+              </span>
+            )}
+          </span>
           {!hasExactlyTwoPlayers && (
             <span className="text-sm font-normal text-amber-400">
               Need exactly 2 players
@@ -216,22 +234,63 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
             </div>
           ))}
         </div>
+
+        {/* Spectators Section */}
+        {lobby.spectators && lobby.spectators.length > 0 && (
+          <div className="mt-6 pt-6 border-t border-emerald-600/30">
+            <h3 className="text-sm font-semibold text-slate-300 mb-3">
+              👀 Spectators ({lobby.spectators.length})
+            </h3>
+            <div className="space-y-2">
+              {lobby.spectators.map((spectator: Player) => (
+                <div
+                  key={spectator.socketId}
+                  className="flex items-center gap-2 p-3 bg-slate-800/40 rounded border border-slate-600/30"
+                >
+                  <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                    spectator.connected ? 'bg-green-500' : 'bg-red-500'
+                  }`} />
+                  <div className="min-w-0">
+                    <div className="text-slate-200 text-sm">
+                      {spectator.name}
+                      {!spectator.connected && ' (disconnected)'}
+                    </div>
+                  </div>
+                  <span className="text-xs bg-blue-600/60 text-blue-100 px-2 py-1 rounded ml-auto flex-shrink-0">
+                    SPECTATING
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Ready Button */}
-      <button
-        onClick={handleToggleReady}
-        className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 uppercase tracking-[0.15em] ${
-          isReady
-            ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-            : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white'
-        }`}
-      >
-        {isReady ? '✓ Ready' : 'Ready Up!'}
-      </button>
+      {/* Spectator Notice */}
+      {lobby.isSpectator && (
+        <div className="bg-blue-900/40 border border-blue-600/50 p-4 rounded-lg text-center">
+          <p className="text-blue-200 text-sm">
+            👀 You are spectating this game. You can watch but not participate.
+          </p>
+        </div>
+      )}
+
+      {/* Ready Button - Only if not spectator */}
+      {!lobby.isSpectator && (
+        <button
+          onClick={handleToggleReady}
+          className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 uppercase tracking-[0.15em] ${
+            isReady
+              ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+              : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white'
+          }`}
+        >
+          {isReady ? '✓ Ready' : 'Ready Up!'}
+        </button>
+      )}
 
       {/* Start Game Button (Host Only) */}
-      {isHost && (
+      {isHost && !lobby.isSpectator && (
         <button
           onClick={handleStartGame}
           disabled={!canStartGame}
@@ -242,10 +301,25 @@ const Lobby: React.FC<LobbyProps> = ({ lobby, socket, gameBuddiesSession }) => {
           }`}
         >
           {!hasExactlyTwoPlayers
-            ? '⚠️ Need 2 Players'
+            ? (
+              <span className="flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4" />
+                Need 2 Players
+              </span>
+            )
             : !allPlayersReady
-            ? '⏳ Waiting for Ready...'
-            : '🚀 Start Game!'}
+            ? (
+              <span className="flex items-center gap-2">
+                ⏳
+                <span>Waiting for Ready...</span>
+              </span>
+            )
+            : (
+              <span className="flex items-center gap-2">
+                <Rocket className="w-4 h-4" />
+                Start Game!
+              </span>
+            )}
         </button>
       )}
 
