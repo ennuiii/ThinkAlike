@@ -10,6 +10,7 @@ export type GameBuddiesSession = {
   isStreamerMode?: boolean; // New: indicates if this is streamer mode
   hideRoomCode?: boolean; // New: indicates if room code should be hidden
   pendingResolution?: boolean; // New: indicates if session needs async resolution
+  premiumTier?: 'free' | 'monthly' | 'lifetime'; // Premium status from GameBuddies
 };
 
 const SESSION_KEY = 'gamebuddies:session';
@@ -27,20 +28,18 @@ export function parseGameBuddiesSession(): GameBuddiesSession | null {
   const playerId = params.get('playerId');
   const role = params.get('role');
 
-  // Streamer mode detection: session + players parameters present (name and role are optional)
-  const isStreamerMode = !!(sessionToken && players);
-
-  if (isStreamerMode) {
-    // For streamer mode, we need to resolve the session token to get the actual room code
+  // Detect any URL with session token as GameBuddies session
+  // The new secure format only passes ?session=XXX&role=gm (no players param)
+  if (sessionToken) {
+    // For session token URLs, we need to resolve the token to get player data
     // Don't return a session immediately - it needs to be resolved asynchronously
-    // Store the streamer mode parameters for async resolution
     const pendingSession = {
       pendingResolution: true,
       sessionToken,
       playerName: playerName || undefined,
       playerId: playerId || undefined,
-      isHost: role === 'gm',
-      expectedPlayers: parseInt(players) || 0,
+      isHost: role === 'gm' || role === 'host',
+      expectedPlayers: parseInt(players || '0') || 0,
       source: 'gamebuddies' as const,
       isStreamerMode: true,
       hideRoomCode: true,
@@ -243,19 +242,21 @@ export async function resolvePendingSession(): Promise<GameBuddiesSession | null
     }
 
     console.log('[GameBuddies] Session resolved to room code:', resolved.roomCode);
+    console.log('[GameBuddies] Session metadata:', resolved.metadata);
 
-    // Build the final session object
+    // Build the final session object - use API response data which has player info
     const finalSession: GameBuddiesSession = {
       roomCode: resolved.roomCode,
-      playerName: pending.playerName,
-      playerId: pending.playerId,
-      isHost: pending.isHost,
-      expectedPlayers: pending.expectedPlayers,
-      returnUrl: `https://gamebuddies.io/cluescale?session=${pending.sessionToken}&players=${pending.expectedPlayers}`,
+      playerName: resolved.metadata?.player_name || pending.playerName,
+      playerId: resolved.metadata?.player_id || pending.playerId,
+      isHost: resolved.metadata?.is_host ?? pending.isHost,
+      expectedPlayers: resolved.metadata?.total_players || pending.expectedPlayers,
+      returnUrl: `https://gamebuddies.io/lobby/${resolved.roomCode}`,
       sessionToken: pending.sessionToken,
       source: 'gamebuddies',
-      isStreamerMode: true,
-      hideRoomCode: true,
+      isStreamerMode: resolved.streamerMode ?? true,
+      hideRoomCode: resolved.streamerMode ?? true,
+      premiumTier: resolved.metadata?.premium_tier || 'free',
     };
 
     // Store the resolved session
