@@ -54,12 +54,14 @@ function AppContent() {
         console.log(`[GameBuddies Client] Creating room with session token: ${session.sessionToken.substring(0, 8)}...`);
       }
 
+      console.log('💎 [PREMIUM DEBUG] premiumTier being sent:', session?.premiumTier);
       socket.emit('room:create', {
         playerName,
         playerId: session?.playerId,
         roomCode: session?.roomCode,
         isGameBuddiesRoom: !!session,
         sessionToken: session?.sessionToken,
+        premiumTier: session?.premiumTier,
       });
     }
   }, []);
@@ -78,10 +80,12 @@ function AppContent() {
         console.log(`[GameBuddies Client] Joining with session token: ${session.sessionToken.substring(0, 8)}...`);
       }
 
+      console.log('💎 [PREMIUM DEBUG] premiumTier being sent:', session?.premiumTier);
       socket.emit('room:join', {
         roomCode,
         playerName,
         playerId: session?.playerId,
+        premiumTier: session?.premiumTier,
       });
     }
   }, []);
@@ -157,11 +161,14 @@ function AppContent() {
       if (session) {
         setGameBuddiesSession(session);
         console.log('[App] GameBuddies session detected after socket connection');
+        console.log('💎 [App] Full session data:', JSON.stringify(session, null, 2));
+        console.log('💎 [App] session.premiumTier:', session.premiumTier);
 
         // Auto-join/create based on session
         if (session.isHost) {
           // Host creates room
           console.log('[App] Auto-creating room as host');
+          console.log('💎 [App] Calling handleCreateRoom with premiumTier:', session.premiumTier);
           setTimeout(() => {
             handleCreateRoom(session.playerName || 'Host', session);
           }, 100);

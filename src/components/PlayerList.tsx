@@ -61,7 +61,9 @@ const PlayerListComponent: React.FC<PlayerListProps> = ({
 
       {/* Players List */}
       <div className="space-y-2 max-h-80 lg:max-h-none overflow-y-auto">
-        {players.map((player) => (
+        {players.map((player) => {
+          console.log('💎 [PlayerList] Player:', player.name, 'premiumTier:', player.premiumTier);
+          return (
           <div
             key={player.socketId}
             className={`flex items-center justify-between p-3 transition-colors ${
@@ -110,6 +112,18 @@ const PlayerListComponent: React.FC<PlayerListProps> = ({
                 </span>
               )}
 
+              {player.premiumTier === 'lifetime' && (
+                <span className="badge-premium lifetime" title="Lifetime Premium">
+                  ⭐ PREMIUM
+                </span>
+              )}
+
+              {player.premiumTier === 'monthly' && (
+                <span className="badge-premium monthly" title="Pro Member">
+                  💎 PRO
+                </span>
+              )}
+
               {isHost && player.socketId !== mySocketId && (
                 <button
                   onClick={() => handleKickPlayer(player.socketId)}
@@ -120,7 +134,8 @@ const PlayerListComponent: React.FC<PlayerListProps> = ({
               )}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
