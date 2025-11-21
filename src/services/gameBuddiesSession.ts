@@ -31,6 +31,18 @@ export function parseGameBuddiesSession(): GameBuddiesSession | null {
   // Detect any URL with session token as GameBuddies session
   // The new secure format only passes ?session=XXX&role=gm (no players param)
   if (sessionToken) {
+    // Check if we already have a session (pending or resolved) in storage for this token
+    const existingSession = loadSession();
+    console.log('[parseGameBuddiesSession] Existing session in storage:', existingSession ? JSON.stringify(existingSession, null, 2) : 'null');
+
+    if (existingSession && existingSession.sessionToken === sessionToken) {
+      // Already have a session for this token (could be pending or resolved), don't overwrite
+      console.log('[parseGameBuddiesSession] Found existing session for this token, NOT overwriting');
+      return null; // Let getCurrentSession fall through to loadSession
+    }
+
+    console.log('[parseGameBuddiesSession] No existing session OR different token - creating new pending session');
+
     // For session token URLs, we need to resolve the token to get player data
     // Don't return a session immediately - it needs to be resolved asynchronously
     const pendingSession = {
@@ -43,6 +55,8 @@ export function parseGameBuddiesSession(): GameBuddiesSession | null {
       source: 'gamebuddies' as const,
       isStreamerMode: true,
       hideRoomCode: true,
+      roomCode: '', // Required field - will be filled after resolution
+      returnUrl: 'https://gamebuddies.io', // Required field - fallback URL
     };
 
     // Store the pending session for async resolution
