@@ -32,6 +32,7 @@ import './styles/BottomTabBar.css';
 import './styles/MobileDrawer.css';
 
 function AppContent() {
+  console.log('🚀 [App] AppContent component initializing...');
   const { theme } = useTheme();
   const [lobby, setLobby] = useState<Lobby | null>(null);
   const [error, setError] = useState<string>('');
