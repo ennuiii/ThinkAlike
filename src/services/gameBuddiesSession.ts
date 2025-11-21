@@ -259,6 +259,8 @@ export async function resolvePendingSession(): Promise<GameBuddiesSession | null
       premiumTier: resolved.metadata?.premium_tier || 'free',
     };
 
+    console.log('💎 [PREMIUM DEBUG] ThinkAlike session resolved - metadata.premium_tier:', resolved.metadata?.premium_tier, 'finalSession.premiumTier:', finalSession.premiumTier);
+
     // Store the resolved session
     storeSession(finalSession);
     return finalSession;
