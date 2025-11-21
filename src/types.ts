@@ -21,6 +21,7 @@ export interface Player {
   currentWord: string | null;  // Hidden from opponent until both submit
   hasSubmitted: boolean;
   score?: number;  // Player score
+  premiumTier?: 'free' | 'monthly' | 'lifetime';  // Premium tier
 }
 
 export interface Settings {
